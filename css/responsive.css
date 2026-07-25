@@ -3,7 +3,7 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* 導覽列與選單 */
+    /* 手機版隱藏桌面選單，點擊三條線後展開 */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -12,19 +12,33 @@
         background-color: var(--bg-secondary);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 20px 0;
-        gap: 16px;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        padding: 24px 0;
+        gap: 20px;
         border-bottom: 1px solid var(--border-color);
+        z-index: 999;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    /* 漢堡選單按鈕設定 (增加點擊範圍) */
     .hamburger {
         display: block;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        margin: 5px 0;
+        background-color: var(--text-primary);
+        transition: var(--transition);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -32,14 +46,20 @@
     }
 
     .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(7px) rotate(45deg);
     }
 
     .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* Hero 區塊 */
+    /* 微調手機版的主題與語言按鈕大小 */
+    .btn-toggle {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    /* Hero 區塊手機版適配 */
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
@@ -62,16 +82,13 @@
         height: 320px !important;
     }
 
-    /* About 區塊 */
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
+    /* 個人簡介與技能卡片 */
+    .about-content,
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 競賽與獎項 */
+    /* 競賽卡片 */
     .competition-item {
         flex-direction: column;
         align-items: flex-start;
