@@ -1,18 +1,9 @@
+# Tony Y. L. Chiang 江育霖 #
 
-
-# Hi there, I'm Tony Chiang (江育霖) 👋
-
-### Smart Healthcare & AI Decision Models | Operations Research & MCDM Researcher
-
-[![Email](https://img.shields.io/badge/Email-yulin.chiang%40ntunhs.edu.tw-red?style=flat-square&logo=gmail)](mailto:yulin.chiang@ntunhs.edu.tw)
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![R](https://img.shields.io/badge/R-4.0+-276DC3?style=flat-square&logo=r&logoColor=white)](https://www.r-project.org/)
-[![SAS](https://img.shields.io/badge/SAS-Data%20Analytics-0072C6?style=flat-square&logo=sas)](https://sas.com)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0001--5761--8894-green?style=flat-square&logo=orcid)](https://orcid.org)
 
 ---
 
-</div>
+
 
 ## 👨‍💻 About Me (個人簡介)
 
@@ -37,7 +28,7 @@
 
 ## 📜 Research Grants & Practical Experience (研究與實務經歷)
 
-* 🎓 **國科會大專生研究計畫 (計畫主持人, 2025/7–2026/2 已結案)**
+* 🎓 **國科會大專生研究計畫 ( 2025/7–2026/2 已結案)**
   * **計畫編號：** `114-2813-C-227-001-H`
   * **題目：** 應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統
 * 🔬 **國家科學及技術委員會（國科會）— 研究助理 (2025–2026)**
@@ -104,7 +95,7 @@
 
 ## 📫 Connect With Me (聯絡方式)
 
-- ✉️ **Email:** `lp911205@gmail.com`
+- ✉️ **Email:** `yulin.chiang@ntunhs.edu.tw`
 - 🏫 **Department:** Department of Healthcare Management, NTUNHS, Taipei, Taiwan
 
 <div align="center">
