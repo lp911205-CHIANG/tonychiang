@@ -34,15 +34,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-image">
-                <!-- 📸 大頭照：pngprofile.jpg.png -->
-                <img src="images/profile.jpg.png" alt="江育霖 Tony Y. L. Chiang" style="width: 242px; height: 139px; border-radius: 12px; border: 3px solid #64b5f6; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); object-fit: cover;">
+    <section id="home" class="hero" style="text-align: center;">
+        <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            
+            <!-- 名字與大頭照組合（照片放在名字右側，整體置中） -->
+            <div class="hero-header-group" style="display: inline-flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+                <div class="hero-title-text" style="text-align: left;">
+                    <h1 style="margin: 0;">江育霖</h1>
+                    <h2 style="margin: 8px 0 0 0;">Tony Y. L. Chiang</h2>
+                </div>
+                <!-- 📸 大頭照：無相框、直放於名字右側 -->
+                <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang" style="width: 180px; height: auto; border: none; box-shadow: none; border-radius: 0; object-fit: cover;">
             </div>
-            <div class="hero-text">
-                <h1>江育霖</h1>
-                <h2>Tony Y. L. Chiang</h2>
                 <p class="hero-subtitle">專注於智慧健康照護領域</p>
                 <p class="hero-description">致力設計並結合混合人工智慧技術的健康決策模型</p>
                 <div class="hero-buttons">
