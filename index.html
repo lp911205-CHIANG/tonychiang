@@ -32,29 +32,30 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero" style="text-align: center;">
-        <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+<!-- Hero Section (左右雙區塊佈局) -->
+    <section id="home" class="hero" style="display: flex; align-items: center; justify-content: center; min-height: 75vh; padding: 40px 20px;">
+        <div class="hero-container" style="display: flex; align-items: center; justify-content: space-between; gap: 48px; max-width: 920px; width: 100%; flex-wrap: wrap-reverse;">
             
-            <!-- 名字與大頭照組合（照片放在名字右側，整體置中） -->
-            <div class="hero-header-group" style="display: inline-flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
-                <div class="hero-title-text" style="text-align: left;">
-                    <h1 style="margin: 0;">江育霖</h1>
-                    <h2 style="margin: 8px 0 0 0;">Tony Y. L. Chiang</h2>
-                </div>
-                <!-- 📸 大頭照：無相框、直放於名字右側 -->
-                <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang" style="width: 180px; height: auto; border: none; box-shadow: none; border-radius: 0; object-fit: cover;">
-            </div>
-                <p class="hero-subtitle">專注於智慧健康照護領域</p>
-                <p class="hero-description">致力設計並結合混合人工智慧技術的健康決策模型</p>
-                <div class="hero-buttons">
+            <!-- 左側區塊：所有文字與動作按鈕 -->
+            <div class="hero-text-block" style="flex: 1; min-width: 280px; text-align: left;">
+                <h1 style="margin: 0 0 6px 0; font-size: 2.6rem; color: #2c3e50;">江育霖</h1>
+                <h2 style="margin: 0 0 20px 0; font-size: 1.5rem; font-weight: 500; color: #666;">Tony Y. L. Chiang</h2>
+                <p class="hero-subtitle" style="font-size: 1.25rem; font-weight: 600; color: #2b6cb0; margin-bottom: 12px;">專注於智慧健康照護領域</p>
+                <p class="hero-description" style="font-size: 1.05rem; line-height: 1.6; color: #4a5568; margin-bottom: 28px;">致力設計並結合混合人工智慧技術的健康決策模型</p>
+                <div class="hero-buttons" style="display: flex; gap: 16px;">
                     <a href="#about" class="btn btn-primary">了解更多</a>
                     <a href="#contact" class="btn btn-secondary">聯絡我</a>
                 </div>
             </div>
+
+            <!-- 右側區塊：大頭照（無相框，直接擺放） -->
+            <div class="hero-image-block" style="flex: 0 0 auto; display: flex; justify-content: center; align-items: center;">
+                <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang" style="width: 230px; height: auto; border: none; box-shadow: none; border-radius: 0; object-fit: cover;">
+            </div>
+
         </div>
     </section>
+
 
     <!-- About Section -->
     <section id="about" class="about">
