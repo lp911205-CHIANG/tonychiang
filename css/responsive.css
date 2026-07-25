@@ -19,11 +19,21 @@
         gap: 0;
         list-style: none;
         padding: 1rem 0;
+        border-bottom: 2px solid var(--secondary-color);
     }
 
     .nav-menu.active li {
         padding: 1rem 2rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
     }
 
     .hero-content h1 {
@@ -44,7 +54,7 @@
 
     .hero {
         padding: 80px 20px;
-        min-height: 500px;
+        min-height: auto;
     }
 
     section h2 {
@@ -103,7 +113,12 @@
 
     .hero {
         padding: 60px 15px;
-        min-height: 400px;
+        min-height: auto;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
     }
 
     .hero-content h1 {
@@ -124,11 +139,13 @@
 
     .hero-buttons {
         gap: 0.5rem;
+        flex-direction: column;
     }
 
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+        width: 100%;
     }
 
     section {
@@ -198,6 +215,10 @@
         min-width: 70px;
         padding: 0.8rem 1rem;
         font-size: 0.85rem;
+    }
+
+    .competition-item {
+        padding: 1.5rem 1rem;
     }
 }
 
