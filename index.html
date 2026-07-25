@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="江育霖 - | Tony Y. L. Chiang - Smart Healthcare Researcher">
-    <title>江育霖 (Tony Y. L. Chiang) - 個人網站</title>
+    <title data-zh="江育霖 (Tony Y. L. Chiang) - 個人網站" data-en="Tony Y. L. Chiang - Personal Website">江育霖 (Tony Y. L. Chiang) - 個人網站</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -17,13 +17,19 @@
                 <p class="subtitle"></p>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">首頁</a></li>
-                <li><a href="#about" class="nav-link">個人簡介</a></li>
-                <li><a href="#research" class="nav-link">研究興趣</a></li>
-                <li><a href="#publications" class="nav-link">學術發表</a></li>
-                <li><a href="#competitions" class="nav-link">競賽與榮譽</a></li>
-                <li><a href="#experience" class="nav-link">經歷</a></li>
-                <li><a href="#contact" class="nav-link">聯絡</a></li>
+                <li><a href="#home" class="nav-link active" data-zh="首頁" data-en="Home">首頁</a></li>
+                <li><a href="#about" class="nav-link" data-zh="個人簡介" data-en="About">個人簡介</a></li>
+                <li><a href="#research" class="nav-link" data-zh="研究興趣" data-en="Research">研究興趣</a></li>
+                <li><a href="#publications" class="nav-link" data-zh="學術發表" data-en="Publications">學術發表</a></li>
+                <li><a href="#competitions" class="nav-link" data-zh="競賽與榮譽" data-en="Honors">競賽與榮譽</a></li>
+                <li><a href="#experience" class="nav-link" data-zh="經歷" data-en="Experience">經歷</a></li>
+                <li><a href="#contact" class="nav-link" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+                
+                <!-- 🔘 一鍵切換主題與語言按鈕區塊 -->
+                <li class="toggle-buttons" style="display: flex; gap: 8px; align-items: center; margin-left: 10px;">
+                    <button id="theme-toggle" class="btn-toggle">☀️ 亮色</button>
+                    <button id="lang-toggle" class="btn-toggle">EN</button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -32,65 +38,64 @@
             </div>
         </div>
     </nav>
-<!-- Hero Section (重新整理左右比例與高對比文字) -->
+
+    <!-- Hero Section -->
     <section id="home" class="hero" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 60px 20px;">
         <div class="hero-container" style="display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 1050px; width: 100%; flex-wrap: wrap;">
             
-            <!-- 左側文字區塊（完全靠左對齊、高亮文字） -->
+            <!-- 左側文字區塊 -->
             <div class="hero-text-block" style="flex: 1; min-width: 320px; text-align: left;">
-                <h1 style="margin: 0 0 10px 0; font-size: 3.2rem; color: #ffffff; font-weight: 700; text-align: left;">江育霖</h1>
+                <h1 data-zh="江育霖" data-en="Yu-Lin Chiang" style="margin: 0 0 10px 0; font-size: 3.2rem; color: #ffffff; font-weight: 700; text-align: left;">江育霖</h1>
                 <h2 style="margin: 0 0 24px 0; font-size: 1.8rem; font-weight: 500; color: #90caf9; text-align: left; border: none; padding: 0;">Tony Y. L. Chiang</h2>
                 
-                <p class="hero-subtitle" style="font-size: 1.3rem; font-weight: 600; color: #64b5f6; margin-bottom: 12px; text-align: left; padding: 0;">專注於智慧健康照護領域</p>
-                <p class="hero-description" style="font-size: 1.1rem; line-height: 1.7; color: #e0e0e0; margin-bottom: 32px; text-align: left;">致力設計並結合混合人工智慧技術的健康決策模型</p>
+                <p class="hero-subtitle" data-zh="專注於智慧健康照護領域" data-en="Focusing on Smart Healthcare & Decision Science" style="font-size: 1.3rem; font-weight: 600; color: #64b5f6; margin-bottom: 12px; text-align: left; padding: 0;">專注於智慧健康照護領域</p>
+                <p class="hero-description" data-zh="致力設計並結合混合人工智慧技術的健康決策模型" data-en="Dedicated to designing hybrid AI-driven healthcare decision-making models" style="font-size: 1.1rem; line-height: 1.7; color: #e0e0e0; margin-bottom: 32px; text-align: left;">致力設計並結合混合人工智慧技術的健康決策模型</p>
                 
                 <div class="hero-buttons" style="display: flex; gap: 16px; justify-content: flex-start;">
-                    <a href="#about" class="btn btn-primary">了解更多</a>
-                    <a href="#contact" class="btn btn-secondary">聯絡我</a>
+                    <a href="#about" class="btn btn-primary" data-zh="了解更多" data-en="Learn More">了解更多</a>
+                    <a href="#contact" class="btn btn-secondary" data-zh="聯絡我" data-en="Contact Me">聯絡我</a>
                 </div>
             </div>
 
-            <!-- 右側照片區塊（放大至 340x420px，提升視覺比例） -->
+            <!-- 右側照片區塊 -->
             <div class="hero-image-block" style="flex: 0 0 auto; display: flex; justify-content: center; align-items: center;">
                <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang" 
-     style="width: 340px; 
-            height: 420px; 
-            border: none; 
-            box-shadow: none; 
-            border-radius: 4px; 
-            object-fit: cover;
-            image-rendering: -webkit-optimize-contrast;
-            filter: contrast(104%) brightness(102%);">
+                    style="width: 340px; height: 420px; border: none; box-shadow: none; border-radius: 4px; object-fit: cover; image-rendering: -webkit-optimize-contrast; filter: contrast(104%) brightness(102%);">
             </div>
 
         </div>
     </section>
 
-
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>個人簡介</h2>
+            <h2 data-zh="個人簡介" data-en="About Me">個人簡介</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>專注於智慧健康照護領域，致力設計並結合混合人工智慧技術的健康決策模型。在研究中，我使用模糊理論與多準則決策方法（MCDM），以提升模型的實務應用性與決策品質。</p>
-                    <p>具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。</p>
+                    <p data-zh="專注於智慧健康照護領域，致力設計並結合混合人工智慧技術的健康決策模型。在研究中，我使用模糊理論與多準則決策方法（MCDM），以提升模型的實務應用性與決策品質。" 
+                       data-en="Focusing on smart healthcare, I specialize in combining hybrid AI technologies with multi-criteria decision-making (MCDM) and fuzzy logic to enhance decision quality and practical application in health systems.">
+                       專注於智慧健康照護領域，致力設計並結合混合人工智慧技術的健康決策模型。在研究中，我使用模糊理論與多準則決策方法（MCDM），以提升模型的實務應用性與決策品質。
+                    </p>
+                    <p data-zh="具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。" 
+                       data-en="Equipped with systems thinking and modular design capabilities, I emphasize practical translation of techniques into measurable benefits within healthcare environments.">
+                       具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。
+                    </p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <h3>研究方法</h3>
+                        <h3 data-zh="研究方法" data-en="Research Methodologies">研究方法</h3>
                         <ul>
-                            <li>文獻計量分析</li>
-                            <li>多準則決策分析</li>
-                            <li>統計分析</li>
+                            <li data-zh="文獻計量分析" data-en="Bibliometric Analysis">文獻計量分析</li>
+                            <li data-zh="多準則決策分析" data-en="Multi-Criteria Decision Analysis (MCDM)">多準則決策分析</li>
+                            <li data-zh="統計分析" data-en="Statistical Analysis">統計分析</li>
                         </ul>
                     </div>
                     <div class="skill-card">
-                        <h3>分析軟體</h3>
+                        <h3 data-zh="分析軟體" data-en="Analytical Software">分析軟體</h3>
                         <ul>
-                            <li>SAS、SPSS、R</li>
-                            <li>QGIS、LINGO</li>
-                            <li>VOSviewer、Excel、Python</li>
+                            <li>SAS, SPSS, R</li>
+                            <li>QGIS, LINGO</li>
+                            <li>VOSviewer, Excel, Python</li>
                         </ul>
                     </div>
                 </div>
@@ -101,25 +106,22 @@
     <!-- Research Interests Section -->
     <section id="research" class="research">
         <div class="container">
-            <h2>研究興趣</h2>
+            <h2 data-zh="研究興趣" data-en="Research Interests">研究興趣</h2>
             <div class="research-grid">
                 <div class="research-card">
-                    <!-- 🖼️ 智慧健康照護：smart medical.jpg -->
                     <img src="images/smart medical.jpg" alt="智慧健康照護">
-                    <h3>智慧健康照護</h3>
-                    <p>結合AI與決策科學的醫療應用</p>
+                    <h3 data-zh="智慧健康照護" data-en="Smart Healthcare">智慧健康照護</h3>
+                    <p data-zh="結合AI與決策科學的醫療應用" data-en="Medical applications combining AI and decision science">結合AI與決策科學的醫療應用</p>
                 </div>
                 <div class="research-card">
-                    <!-- 🖼️ 決策模型於醫療機構評估應用：mcdm.jpg -->
                     <img src="images/mcdm.jpg.png" alt="決策模型於醫療機構評估應用">
-                    <h3>決策模型於醫療機構評估應用</h3>
-                    <p>多準則決策方法的實務應用</p>
+                    <h3 data-zh="決策模型於醫療機構評估應用" data-en="MCDM in Healthcare Evaluation">決策模型於醫療機構評估應用</h3>
+                    <p data-zh="多準則決策方法的實務應用" data-en="Practical application of multi-criteria decision frameworks">多準則決策方法的實務應用</p>
                 </div>
                 <div class="research-card">
-                    <!-- 🖼️ 虛擬人與健康行銷：ai.jfif -->
                     <img src="images/ai.jfif" alt="虛擬人與健康行銷">
-                    <h3>虛擬人與健康行銷</h3>
-                    <p>虛擬代言人的可信度與行銷效果研究</p>
+                    <h3 data-zh="虛擬人與健康行銷" data-en="Virtual Humans & Health Marketing">虛擬人與健康行銷</h3>
+                    <p data-zh="虛擬代言人的可信度與行銷效果研究" data-en="Research on credibility and marketing effectiveness of digital human endorsers">虛擬代言人的可信度與行銷效果研究</p>
                 </div>
             </div>
         </div>
@@ -128,9 +130,9 @@
     <!-- Publications Section -->
     <section id="publications" class="publications">
         <div class="container">
-            <h2>學術發表</h2>
+            <h2 data-zh="學術發表" data-en="Publications">學術發表</h2>
             <div class="publications-content">
-                <h3>國際會議論文</h3>
+                <h3 data-zh="國際會議論文" data-en="International Conference Papers">國際會議論文</h3>
                 <div class="publication-list">
                     <div class="publication-item">
                         <p><strong>Chiang, T. Y. L., Xia, J. H., Yan, C., Tsai, Y. L., Yu, L. Y. F., Huang, S. W., & Tzeng, G. H.</strong> (2026, July 12–17). Attribute clustering-based objective decision model for age-friendly cities (AFC) strategic resource allocation and governance. <em>24th Conference of the International Federation of Operational Research Societies</em>, University of Vienna, Austria. [Oral]</p>
@@ -155,19 +157,31 @@
                     </div>
                 </div>
 
-                <h3>國內會議論文</h3>
+                <h3 data-zh="國內會議論文" data-en="Domestic Conference Papers">國內會議論文</h3>
                 <div class="publication-list">
                     <div class="publication-item">
-                        <p><strong>顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁</strong>（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。<em>2026休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[海報發表]</p>
+                        <p data-zh="顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。2026休閒產業與健康促進學術研討會，臺北市，臺灣。[海報發表]"
+                           data-en="Yan, C. L., Chiang, T. Y. L., Lai, C. H., Tan, H. R., & Huang, S. W. (2026, July). Identifying core criteria of Generation Z purchasing health supplements using Z-number-based fuzzy Delphi method. 2026 Academic Conference on Leisure Industry and Health Promotion, Taipei, Taiwan. [Poster]">
+                           <strong>顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁</strong>（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。<em>2026休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[海報發表]
+                        </p>
                     </div>
                     <div class="publication-item">
-                        <p><strong>江育霖、游亦芳、陳巧珊、夏建華、黃三翁</strong>（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]</p>
+                        <p data-zh="江育霖、游亦芳、陳巧珊、夏建華、黃三翁（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。2025大健康科學暨休閒產業與健康促進學術研討會，臺北市，臺灣。[口頭發表]"
+                           data-en="Chiang, T. Y. L., Yu, L. Y. F., Chen, C. S., Xia, J. H., & Huang, S. W. (2025, June 13). Research trends and hot topics of virtual avatars in health communication and promotion: A bibliometric analysis using VOSviewer. 2025 Conference on Grand Health Science, Leisure Industry, and Health Promotion, Taipei, Taiwan. [Oral]">
+                           <strong>江育霖、游亦芳、陳巧珊、夏建華、黃三翁</strong>（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]
+                        </p>
                     </div>
                     <div class="publication-item">
-                        <p><strong>游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁</strong>（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]</p>
+                        <p data-zh="游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。2025大健康科學暨休閒產業與健康促進學術研討會，臺北市，臺灣。[口頭發表]"
+                           data-en="Yu, L. Y. F., Guo, S. Y., Chiang, T. Y. L., Xu, W., Xia, J. H., & Huang, S. W. (2025, June 13). Constructing an evaluation framework for campus gym management using dynamic Z-numbers and fuzzy Delphi method. 2025 Conference on Grand Health Science, Leisure Industry, and Health Promotion, Taipei, Taiwan. [Oral]">
+                           <strong>游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁</strong>（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]
+                        </p>
                     </div>
                     <div class="publication-item">
-                        <p><strong>江育霖、蔡懿玲、游亦芳、黃三翁</strong>（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。<em>2025醫護與科技人文研討會</em>，宜蘭縣，臺灣。[口頭發表]</p>
+                        <p data-zh="江育霖、蔡懿玲、游亦芳、黃三翁（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。2025醫護與科技人文研討會，宜蘭縣，臺灣。[口頭發表]"
+                           data-en="Chiang, T. Y. L., Tsai, Y. L., Yu, L. Y. F., & Huang, S. W. (2025, May 24). Investigating the credibility of virtual endorsers in brand marketing: Past literature and future trends. 2025 Conference on Healthcare, Technology, and Humanities, Yilan, Taiwan. [Oral]">
+                           <strong>江育霖、蔡懿玲、游亦芳、黃三翁</strong>（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。<em>2025醫護與科技人文研討會</em>，宜蘭縣，臺灣。[口頭發表]
+                        </p>
                     </div>
                 </div>
             </div>
@@ -177,54 +191,54 @@
     <!-- Competitions Section -->
     <section id="competitions" class="competitions">
         <div class="container">
-            <h2>競賽與榮譽</h2>
+            <h2 data-zh="競賽與榮譽" data-en="Competitions & Honors">競賽與榮譽</h2>
             <div class="competitions-content">
-                <h3>競賽成績</h3>
+                <h3 data-zh="競賽成績" data-en="Competition Awards">競賽成績</h3>
                 <div class="competition-list">
                     <div class="competition-item">
-                        <div class="award">特優</div>
+                        <div class="award" data-zh="特優" data-en="Grand Prize">特優</div>
                         <div class="content">
-                            <p><strong>2026全國健康科技創新競賽</strong></p>
-                            <p>珍藏記憶-基於影像識別與敘事轉譯之高齡感念資產APP</p>
+                            <p><strong data-zh="2026全國健康科技創新競賽" data-en="2026 National Healthcare Technology Innovation Competition">2026全國健康科技創新競賽</strong></p>
+                            <p data-zh="珍藏記憶-基於影像識別與敘事轉譯之高齡感念資產APP" data-en="Cherished Memories: An Elderly Sentimental Asset APP Based on Image Recognition and Narrative Translation">珍藏記憶-基於影像識別與敘事轉譯之高齡感念資產APP</p>
                         </div>
                     </div>
                     <div class="competition-item">
-                        <div class="award">佳作</div>
+                        <div class="award" data-zh="佳作" data-en="Honorable Mention">佳作</div>
                         <div class="content">
-                            <p><strong>2026 第四屆全國商務大數據創新競賽</strong></p>
-                            <p>高齡慢性病患精準膳食商務平台構建</p>
+                            <p><strong data-zh="2026 第四屆全國商務大數據創新競賽" data-en="The 4th National Business Big Data Innovation Competition 2026">2026 第四屆全國商務大數據創新競賽</strong></p>
+                            <p data-zh="高齡慢性病患精準膳食商務平台構建" data-en="Building a Precision Dietary Business Platform for Elderly Chronic Disease Patients">高齡慢性病患精準膳食商務平台構建</p>
                         </div>
                     </div>
                     <div class="competition-item">
-                        <div class="award">亞軍</div>
+                        <div class="award" data-zh="亞軍" data-en="1st Runner-Up">亞軍</div>
                         <div class="content">
-                            <p><strong>2025 永續智慧創新黑客松競賽</strong></p>
-                            <p>銀髮族運動健康AI語音互動系統開發</p>
+                            <p><strong data-zh="2025 永續智慧創新黑客松競賽" data-en="2025 Sustainable Smart Innovation Hackathon">2025 永續智慧創新黑客松競賽</strong></p>
+                            <p data-zh="銀髮族運動健康AI語音互動系統開發" data-en="Development of AI Voice Interactive System for Senior Health and Exercise">銀髮族運動健康AI語音互動系統開發</p>
                         </div>
                     </div>
                     <div class="competition-item">
-                        <div class="award">季軍</div>
+                        <div class="award" data-zh="季軍" data-en="2nd Runner-Up">季軍</div>
                         <div class="content">
-                            <p><strong>2025年第十屆新創盃全球大專校院暨高中職創意創新創業企劃競賽</strong></p>
-                            <p>數位轉型 + 創新行銷 + 個人IP</p>
+                            <p><strong data-zh="2025年第十屆新創盃全球大專校院暨高中職創意創新創業企劃競賽" data-en="The 10th Innovation Cup Global Competition 2025">2025年第十屆新創盃全球大專校院暨高中職創意創新創業企劃競賽</strong></p>
+                            <p data-zh="數位轉型 + 創新行銷 + 個人IP" data-en="Digital Transformation + Innovative Marketing + Personal IP">數位轉型 + 創新行銷 + 個人IP</p>
                         </div>
                     </div>
                     <div class="competition-item">
-                        <div class="award">特優</div>
+                        <div class="award" data-zh="特優" data-en="Grand Prize">特優</div>
                         <div class="content">
-                            <p><strong>2025全國健康科技創新競賽</strong></p>
-                            <p>聲控觸感記憶牆 高齡者互動情緒照護牆面系統</p>
+                            <p><strong data-zh="2025全國健康科技創新競賽" data-en="2025 National Healthcare Technology Innovation Competition">2025全國健康科技創新競賽</strong></p>
+                            <p data-zh="聲控觸感記憶牆 高齡者互動情緒照護牆面系統" data-en="Voice & Touch Interactive Memory Wall: Emotional Care Wall System for Seniors">聲控觸感記憶牆 高齡者互動情緒照護牆面系統</p>
                         </div>
                     </div>
                 </div>
 
-                <h3>研究計畫</h3>
+                <h3 data-zh="研究計畫" data-en="Research Projects">研究計畫</h3>
                 <div class="research-funding">
                     <div class="funding-item">
-                        <p><strong>國科會大專生研究計畫</strong> (2025/7-2026/2 已結案)</p>
-                        <p>計畫編號：114-2813-C-227-001-H</p>
-                        <p>計畫名稱：應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統</p>
-                        <p>核定金額：51,000元</p>
+                        <p><strong data-zh="國科會大專生研究計畫 (2025/7-2026/2 已結案)" data-en="NSTC College Student Research Project (2025/07–2026/02 Completed)">國科會大專生研究計畫 (2025/7-2026/2 已結案)</strong></p>
+                        <p data-zh="計畫編號：114-2813-C-227-001-H" data-en="Project No.: 114-2813-C-227-001-H">計畫編號：114-2813-C-227-001-H</p>
+                        <p data-zh="計畫名稱：應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統" data-en="Project Title: Applying Hybrid Decision-Making Models to Construct an Evaluation System for Healthcare Virtual Endorsers">計畫名稱：應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統</p>
+                        <p data-zh="核定金額：51,000元" data-en="Grant Amount: NTD 51,000">核定金額：51,000元</p>
                     </div>
                 </div>
             </div>
@@ -234,50 +248,50 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2>經歷</h2>
+            <h2 data-zh="經歷" data-en="Experience">經歷</h2>
             <div class="experience-content">
-                <h3>組織決策與行政參與</h3>
+                <h3 data-zh="組織決策與行政參與" data-en="Organizational Governance & Service">組織決策與行政參與</h3>
                 <div class="experience-list">
                     <div class="experience-item">
-                        <h4>健康事業管理系所「系實習委員會」委員 (2026-2027)</h4>
+                        <h4 data-zh="健康事業管理系所「系實習委員會」委員 (2026-2027)" data-en="Member, Departmental Internship Committee, Dept. of Healthcare Management (2026-2027)">健康事業管理系所「系實習委員會」委員 (2026-2027)</h4>
                     </div>
                     <div class="experience-item">
-                        <h4>健康事業管理系所「課程委員會」委員 (2026-2027)</h4>
+                        <h4 data-zh="健康事業管理系所「課程委員會」委員 (2026-2027)" data-en="Member, Curriculum Committee, Dept. of Healthcare Management (2026-2027)">健康事業管理系所「課程委員會」委員 (2026-2027)</h4>
                     </div>
                 </div>
 
-                <h3>研究與醫療實務</h3>
+                <h3 data-zh="研究與醫療實務" data-en="Research & Healthcare Practice">研究與醫療實務</h3>
                 <div class="experience-list">
                     <div class="experience-item">
-                        <h4>國泰醫療財團法人國泰綜合醫院（醫學中心）社區醫學部 (2026)</h4>
+                        <h4 data-zh="國泰醫療財團法人國泰綜合醫院（醫學中心）社區醫學部 (2026)" data-en="Dept. of Community Medicine, Cathay General Hospital (Medical Center) (2026)">國泰醫療財團法人國泰綜合醫院（醫學中心）社區醫學部 (2026)</h4>
                         <ul>
-                            <li>參與社區癌症篩檢專案，執行第一線民眾健康風險評估與衛教諮詢</li>
-                            <li>協助預防醫學推廣與社區健康促進活動流程，累積醫療實務經驗</li>
+                            <li data-zh="參與社區癌症篩檢專案，執行第一線民眾健康風險評估與衛教諮詢" data-en="Participated in community cancer screening programs and conducted first-line health risk assessments and counseling.">參與社區癌症篩檢專案，執行第一線民眾健康風險評估與衛教諮詢</li>
+                            <li data-zh="協助預防醫學推廣與社區健康促進活動流程，累積醫療實務經驗" data-en="Assisted in promoting preventive medicine and community health initiatives, accumulating field experience.">協助預防醫學推廣與社區健康促進活動流程，累積醫療實務經驗</li>
                         </ul>
                     </div>
                     <div class="experience-item">
-                        <h4>國家科學及技術委員會（國科會） — 研究助理 (2025-2026)</h4>
-                        <p>計畫名稱：「連結永續與財務效益：探討醫院納入ESG之財務績效及面臨挑戰的分析」</p>
+                        <h4 data-zh="國家科學及技術委員會（國科會） — 研究助理 (2025-2026)" data-en="Research Assistant, National Science and Technology Council (NSTC) (2025-2026)">國家科學及技術委員會（國科會） — 研究助理 (2025-2026)</h4>
+                        <p data-zh="計畫名稱：「連結永續與財務效益：探討醫院納入ESG之財務績效及面臨挑戰的分析」" data-en="Project: 'Linking Sustainability and Financial Returns: Analyzing Financial Performance and Challenges of Hospital ESG Integration'">計畫名稱：「連結永續與財務效益：探討醫院納入ESG之財務績效及面臨挑戰的分析」</p>
                     </div>
                 </div>
 
-                <h3>教育與智慧科技教學經歷</h3>
+                <h3 data-zh="教育與智慧科技教學經歷" data-en="Teaching & Academic Assistance">教育與智慧科技教學經歷</h3>
                 <div class="experience-list">
                     <div class="experience-item">
-                        <h4>健康事業管理系所「健康經濟學」教學助理 (2025)</h4>
+                        <h4 data-zh="健康事業管理系所「健康經濟學」教學助理 (2025)" data-en="Teaching Assistant, Health Economics, Dept. of Healthcare Management (2025)">健康事業管理系所「健康經濟學」教學助理 (2025)</h4>
                     </div>
                     <div class="experience-item">
-                        <h4>跨領域學院「智慧賦能科技與實務」教學助理 (2025)</h4>
+                        <h4 data-zh="跨領域學院「智慧賦能科技與實務」教學助理 (2025)" data-en="Teaching Assistant, Smart Empowerment Technology & Practice, Interdisciplinary College (2025)">跨領域學院「智慧賦能科技與實務」教學助理 (2025)</h4>
                     </div>
                     <div class="experience-item">
-                        <h4>跨領域學院「智能外骨骼基礎實務概論」教學助理 (2025)</h4>
+                        <h4 data-zh="跨領域學院「智能外骨骼基礎實務概論」教學助理 (2025)" data-en="Teaching Assistant, Introduction to Intelligent Exoskeletons, Interdisciplinary College (2025)">跨領域學院「智能外骨骼基礎實務概論」教學助理 (2025)</h4>
                     </div>
                     <div class="experience-item">
-                        <h4>專業實務能力鑑定中心「教育部延緩老化暨急性後期降低失能之智慧賦能人才培育計畫」教學助理 (2024)</h4>
+                        <h4 data-zh="專業實務能力鑑定中心「教育部延緩老化暨急性後期降低失能之智慧賦能人才培育計畫」教學助理 (2024)" data-en="Teaching Assistant, MOE Smart Empowerment Talent Training Program for Anti-Aging and Post-Acute Disability Reduction (2024)">專業實務能力鑑定中心「教育部延緩老化暨急性後期降低失能之智慧賦能人才培育計畫」教學助理 (2024)</h4>
                     </div>
                 </div>
 
-                <h3>專業證照</h3>
+                <h3 data-zh="專業證照" data-en="Certifications">專業證照</h3>
                 <div class="certifications-grid">
                     <div class="cert-category">
                         <h4>AI & Technology</h4>
@@ -295,16 +309,16 @@
                     <div class="cert-category">
                         <h4>Business & Finance</h4>
                         <ul>
-                            <li>金融市場常識與職業道德證書</li>
-                            <li>會計能力測驗一級</li>
+                            <li data-zh="金融市場常識與職業道德證書" data-en="Financial Market Knowledge & Ethics Certification">金融市場常識與職業道德證書</li>
+                            <li data-zh="會計能力測驗一級" data-en="Level 1 Accounting Competency Certificate">會計能力測驗一級</li>
                         </ul>
                     </div>
                     <div class="cert-category">
                         <h4>Engineering Skills</h4>
                         <ul>
                             <li>TQC+ 專業設計人才</li>
-                            <li>機械加工丙級</li>
-                            <li>機械專業人才認證</li>
+                            <li data-zh="機械加工丙級" data-en="Class C Technician for Machining">機械加工丙級</li>
+                            <li data-zh="機械專業人才認證" data-en="Mechanical Professional Certification">機械專業人才認證</li>
                         </ul>
                     </div>
                 </div>
@@ -315,9 +329,12 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>聯絡方式</h2>
+            <h2 data-zh="聯絡方式" data-en="Contact">聯絡方式</h2>
             <div class="contact-content">
-                <p>感謝您對我的研究工作感興趣。如有任何提案、合作機會或詢問，歡迎透過以下方式與我聯絡：</p>
+                <p data-zh="感謝您對我的研究工作感興趣。如有任何提案、合作機會或詢問，歡迎透過以下方式與我聯絡：" 
+                   data-en="Thank you for your interest in my research. If you have any collaboration proposals or inquiries, please feel free to reach out:">
+                   感謝您對我的研究工作感興趣。如有任何提案、合作機會或詢問，歡迎透過以下方式與我聯絡：
+                </p>
                 <div class="contact-links">
                     <a href="mailto:lp911205@gmail.com" class="contact-link">
                         <span class="icon">✉️</span>
@@ -336,7 +353,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 江育霖 (Tony Y. L. Chiang). All rights reserved.</p>
-            <p>Last updated: July 25, 2026</p>
+            <p data-zh="最後更新：2026年7月25日" data-en="Last updated: July 25, 2026">最後更新：2026年7月25日</p>
         </div>
     </footer>
 
