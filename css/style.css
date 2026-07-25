@@ -2,31 +2,31 @@
    1. 全域變數與主題設定 (CSS Variables)
    ========================================================================== */
 :root {
-    /* 預設暗色主題 (Dark Theme) */
-    --bg-primary: #0a192f;
-    --bg-secondary: #112240;
-    --bg-card: #1b2e4b;
-    --text-primary: #f8fafc;     /* 高對比近白色 */
-    --text-secondary: #cbd5e1;   /* 明亮淺灰色 */
-    --accent-color: #64ffda;
-    --accent-blue: #38bdf8;
-    --nav-bg: rgba(10, 25, 47, 0.95);
-    --border-color: rgba(255, 255, 255, 0.12);
-    --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    /* 預設暗色主題 - 純黑極簡風格 (Pure Black Theme) */
+    --bg-primary: #000000;       /* 主背景：純黑色 */
+    --bg-secondary: #121212;     /* 卡片與次區塊：深灰黑色（增加層次感） */
+    --bg-card: #1e1e1e;          /* 卡片背景 */
+    --text-primary: #ffffff;     /* 主文字：純白色 */
+    --text-secondary: #a1a1aa;   /* 次要文字：柔和淺灰 */
+    --accent-color: #64ffda;     /* 強調色 1 */
+    --accent-blue: #38bdf8;      /* 強調色 2（深天藍） */
+    --nav-bg: rgba(0, 0, 0, 0.85); /* 頂端導覽列：霧面半透明純黑 */
+    --border-color: rgba(255, 255, 255, 0.12); /* 細微邊框 */
+    --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
     --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* 亮色主題 (Light Theme - 高對比清晰度版) */
+/* 亮色主題 (Light Theme - 維持切換功能) */
 body.light-theme {
-    --bg-primary: #f8fafc;       /* 柔和淺灰背景 */
-    --bg-secondary: #ffffff;     /* 卡片純白背景 */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
     --bg-card: #ffffff;
-    --text-primary: #0f172a;     /* 深藍灰（非常清晰的主文字） */
-    --text-secondary: #334155;   /* 深灰（清晰的次要文字） */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
     --accent-color: #0284c7;
-    --accent-blue: #0284c7;      /* 深藍色強調 */
+    --accent-blue: #0284c7;
     --nav-bg: rgba(255, 255, 255, 0.95);
-    --border-color: #e2e8f0;     /* 淺灰邊框 */
+    --border-color: #e2e8f0;
     --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
 }
 
