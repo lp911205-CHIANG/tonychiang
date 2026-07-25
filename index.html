@@ -10,35 +10,38 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <h1>Tony Y. L. Chiang</h1>
-                <p class="subtitle"></p>
+<nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+            <h1>Tony Y. L. Chiang</h1>
+        </div>
+
+        <!-- 右側按鈕區：包含切換按鈕與手機漢堡選單 -->
+        <div class="nav-controls" style="display: flex; align-items: center; gap: 10px;">
+            <div class="toggle-buttons" style="display: flex; gap: 6px; align-items: center;">
+                <button id="theme-toggle" class="btn-toggle">☀️ 亮色</button>
+                <button id="lang-toggle" class="btn-toggle">EN</button>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active" data-zh="首頁" data-en="Home">首頁</a></li>
-                <li><a href="#about" class="nav-link" data-zh="個人簡介" data-en="About">個人簡介</a></li>
-                <li><a href="#research" class="nav-link" data-zh="研究興趣" data-en="Research">研究興趣</a></li>
-                <li><a href="#publications" class="nav-link" data-zh="學術發表" data-en="Publications">學術發表</a></li>
-                <li><a href="#competitions" class="nav-link" data-zh="競賽與榮譽" data-en="Honors">競賽與榮譽</a></li>
-                <li><a href="#experience" class="nav-link" data-zh="經歷" data-en="Experience">經歷</a></li>
-                <li><a href="#contact" class="nav-link" data-zh="聯絡" data-en="Contact">聯絡</a></li>
-                
-                <!-- 🔘 一鍵切換主題與語言按鈕區塊 -->
-                <li class="toggle-buttons" style="display: flex; gap: 8px; align-items: center; margin-left: 10px;">
-                    <button id="theme-toggle" class="btn-toggle">☀️ 亮色</button>
-                    <button id="lang-toggle" class="btn-toggle">EN</button>
-                </li>
-            </ul>
+            
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-    </nav>
 
+        <!-- 手機版點擊三條線後滑出的選單 -->
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active" data-zh="首頁" data-en="Home">首頁</a></li>
+            <li><a href="#about" class="nav-link" data-zh="個人簡介" data-en="About">個人簡介</a></li>
+            <li><a href="#research" class="nav-link" data-zh="研究興趣" data-en="Research">研究興趣</a></li>
+            <li><a href="#publications" class="nav-link" data-zh="學術發表" data-en="Publications">學術發表</a></li>
+            <li><a href="#competitions" class="nav-link" data-zh="競賽與榮譽" data-en="Honors">競賽與榮譽</a></li>
+            <li><a href="#experience" class="nav-link" data-zh="經歷" data-en="Experience">經歷</a></li>
+            <li><a href="#contact" class="nav-link" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        </ul>
+    </div>
+</nav>
     <!-- Hero Section -->
     <section id="home" class="hero" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 60px 20px;">
         <div class="hero-container" style="display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 1050px; width: 100%; flex-wrap: wrap;">
