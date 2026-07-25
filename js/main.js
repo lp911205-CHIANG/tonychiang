@@ -1,112 +1,70 @@
-// Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. DOM 元素選擇器
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const langToggleBtn = document.getElementById("lang-toggle");
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-link");
 
-// Toggle menu on hamburger click
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Close menu when a link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Active link highlighting based on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Smooth scrolling
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
-
-// Scroll to Top Button
-const scrollToTopBtn = document.createElement('div');
-scrollToTopBtn.className = 'scroll-to-top';
-scrollToTopBtn.innerHTML = '↑';
-document.body.appendChild(scrollToTopBtn);
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
+    // 2. 主題切換 (Theme Toggle)
+    const currentTheme = localStorage.getItem("theme") || "dark";
+    if (currentTheme === "light") {
+        document.body.classList.add("light-theme");
+        themeToggleBtn.textContent = "🌙 暗色";
     } else {
-        scrollToTopBtn.classList.remove('show');
+        themeToggleBtn.textContent = "☀️ 亮色";
     }
-});
 
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        let theme = "dark";
+        if (document.body.classList.contains("light-theme")) {
+            theme = "light";
+            themeToggleBtn.textContent = "🌙 暗色";
+        } else {
+            themeToggleBtn.textContent = "☀️ 亮色";
         }
+        localStorage.setItem("theme", theme);
     });
-}, observerOptions);
 
-// Observe cards for animation
-const cards = document.querySelectorAll(
-    '.skill-card, .research-card, .publication-item, .experience-item, .competition-item'
-);
-
-cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar')) {
-        navMenu.classList.remove('active');
+    // 3. 雙語語言切換 (Language Toggle)
+    let currentLang = localStorage.getItem("lang") || "zh";
+    
+    function updateLanguage(lang) {
+        const translatableElements = document.querySelectorAll("[data-zh][data-en]");
+        translatableElements.forEach(el => {
+            if (lang === "en") {
+                el.textContent = el.getAttribute("data-en");
+            } else {
+                el.textContent = el.getAttribute("data-zh");
+            }
+        });
+        langToggleBtn.textContent = lang === "en" ? "中文" : "EN";
+        document.title = lang === "en" ? "Tony Y. L. Chiang - Personal Website" : "江育霖 (Tony Y. L. Chiang) - 個人網站";
     }
-});
 
-console.log('Website loaded successfully!');
+    // 初始化語言
+    updateLanguage(currentLang);
+
+    langToggleBtn.addEventListener("click", () => {
+        currentLang = currentLang === "zh" ? "en" : "zh";
+        localStorage.setItem("lang", currentLang);
+        updateLanguage(currentLang);
+    });
+
+    // 4. 手機版 Hamburger 選單切換
+    if (hamburger) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+    }
+
+    // 點擊導覽連結時自動關閉手機選單
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            if (hamburger) hamburger.classList.remove("active");
+            if (navMenu) navMenu.classList.remove("active");
+        });
+    });
+});
