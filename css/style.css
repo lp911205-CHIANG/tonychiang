@@ -5,33 +5,33 @@
     /* 預設暗色主題 (Dark Theme) */
     --bg-primary: #0a192f;
     --bg-secondary: #112240;
-    --bg-card: #233554;
-    --text-primary: #e6f1ff;
-    --text-secondary: #8892b0;
+    --bg-card: #1b2e4b;
+    --text-primary: #f8fafc;     /* 高對比近白色 */
+    --text-secondary: #cbd5e1;   /* 明亮淺灰色 */
     --accent-color: #64ffda;
-    --accent-blue: #64b5f6;
-    --nav-bg: rgba(10, 25, 47, 0.9);
-    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-blue: #38bdf8;
+    --nav-bg: rgba(10, 25, 47, 0.95);
+    --border-color: rgba(255, 255, 255, 0.12);
     --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* 亮色主題 (Light Theme) */
+/* 亮色主題 (Light Theme - 高對比清晰度版) */
 body.light-theme {
-    --bg-primary: #f8f9fa;
-    --bg-secondary: #ffffff;
+    --bg-primary: #f8fafc;       /* 柔和淺灰背景 */
+    --bg-secondary: #ffffff;     /* 卡片純白背景 */
     --bg-card: #ffffff;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
+    --text-primary: #0f172a;     /* 深藍灰（非常清晰的主文字） */
+    --text-secondary: #334155;   /* 深灰（清晰的次要文字） */
     --accent-color: #0284c7;
-    --accent-blue: #0369a1;
-    --nav-bg: rgba(248, 249, 250, 0.95);
-    --border-color: #e2e8f0;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    --accent-blue: #0284c7;      /* 深藍色強調 */
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --border-color: #e2e8f0;     /* 淺灰邊框 */
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
-   2. 基礎重置與排版 (Base Reset & Typography)
+   2. 基礎重置與文字全局強制連動
    ========================================================================== */
 * {
     margin: 0;
@@ -52,6 +52,21 @@ body {
     transition: var(--transition);
 }
 
+/* 強制所有文字標籤使用變數顏色 */
+h1, h2, h3, h4, h5, h6, strong, b {
+    color: var(--text-primary) !important;
+}
+
+p, span, li, td, th, div, label {
+    color: var(--text-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    transition: var(--transition);
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -65,7 +80,6 @@ section {
 
 h2 {
     font-size: 2rem;
-    color: var(--text-primary);
     margin-bottom: 32px;
     position: relative;
     padding-bottom: 8px;
@@ -80,12 +94,6 @@ h2::after {
     height: 3px;
     background-color: var(--accent-blue);
     border-radius: 2px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
 }
 
 /* ==========================================================================
@@ -112,7 +120,6 @@ a {
 .logo h1 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--text-primary);
 }
 
 .nav-menu {
@@ -124,20 +131,20 @@ a {
 
 .nav-link {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
     font-weight: 500;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--accent-blue);
+    color: var(--accent-blue) !important;
 }
 
-/* 按鈕：切換主題與語言 */
+/* 切換按鈕 */
 .btn-toggle {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 6px 12px;
+    color: var(--text-primary) !important;
+    padding: 6px 14px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.85rem;
@@ -147,26 +154,16 @@ a {
 
 .btn-toggle:hover {
     border-color: var(--accent-blue);
-    color: var(--accent-blue);
+    color: var(--accent-blue) !important;
 }
 
 /* Hamburger 選單按鈕 */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
 .hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
     background-color: var(--text-primary);
-    transition: var(--transition);
 }
 
 /* ==========================================================================
-   4. Hero Section
+   4. Hero Section & 按鈕
    ========================================================================== */
 .hero {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -183,36 +180,32 @@ a {
 
 .btn-primary {
     background-color: var(--accent-blue);
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .btn-primary:hover {
-    background-color: #0284c7;
+    opacity: 0.9;
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     border: 1px solid var(--accent-blue);
-    color: var(--accent-blue);
+    color: var(--accent-blue) !important;
+    background: transparent;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(100, 181, 246, 0.1);
+    background-color: rgba(2, 132, 199, 0.1);
     transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   5. 個人簡介與技能 (About & Skills)
+   5. 各區塊卡片樣式 (Cards & Containers)
    ========================================================================== */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-}
-
-.about-text p {
-    margin-bottom: 16px;
-    color: var(--text-secondary);
 }
 
 .skills-grid {
@@ -221,32 +214,30 @@ a {
     gap: 20px;
 }
 
-.skill-card {
+.skill-card, 
+.research-card, 
+.publication-item, 
+.competition-item, 
+.funding-item, 
+.experience-item, 
+.cert-category, 
+.contact-link {
     background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.skill-card {
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
 }
 
 .skill-card h3 {
-    font-size: 1.1rem;
-    color: var(--accent-blue);
+    color: var(--accent-blue) !important;
     margin-bottom: 12px;
 }
 
-.skill-card ul {
-    list-style: none;
-}
-
-.skill-card li {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
-}
-
-/* ==========================================================================
-   6. 研究興趣 (Research Interests)
-   ========================================================================== */
+/* 研究興趣 */
 .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,16 +245,13 @@ a {
 }
 
 .research-card {
-    background: var(--bg-secondary);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .research-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
 }
 
 .research-card img {
@@ -273,26 +261,14 @@ a {
 }
 
 .research-card h3 {
-    font-size: 1.15rem;
     padding: 16px 16px 8px 16px;
-    color: var(--text-primary);
 }
 
 .research-card p {
-    font-size: 0.9rem;
     padding: 0 16px 16px 16px;
-    color: var(--text-secondary);
 }
 
-/* ==========================================================================
-   7. 學術發表 (Publications)
-   ========================================================================== */
-.publications-content h3 {
-    font-size: 1.3rem;
-    color: var(--accent-blue);
-    margin: 24px 0 16px 0;
-}
-
+/* 學術發表 */
 .publication-list {
     display: flex;
     flex-direction: column;
@@ -300,24 +276,12 @@ a {
 }
 
 .publication-item {
-    background: var(--bg-secondary);
     padding: 16px 20px;
     border-radius: 6px;
     border-left: 4px solid var(--accent-blue);
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.95rem;
-    color: var(--text-secondary);
 }
 
-.publication-item strong {
-    color: var(--text-primary);
-}
-
-/* ==========================================================================
-   8. 競賽與研究計畫 (Competitions & Funding)
-   ========================================================================== */
+/* 競賽與獎項 */
 .competition-list {
     display: flex;
     flex-direction: column;
@@ -329,15 +293,13 @@ a {
     display: flex;
     align-items: center;
     gap: 20px;
-    background: var(--bg-secondary);
     padding: 16px 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
 }
 
 .award {
-    background: rgba(100, 181, 246, 0.15);
-    color: var(--accent-blue);
+    background: rgba(2, 132, 199, 0.12);
+    color: var(--accent-blue) !important;
     padding: 6px 14px;
     border-radius: 20px;
     font-weight: 700;
@@ -346,23 +308,11 @@ a {
 }
 
 .funding-item {
-    background: var(--bg-secondary);
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
-    line-height: 1.8;
-    color: var(--text-secondary);
 }
 
-/* ==========================================================================
-   9. 經歷與證照 (Experience & Certifications)
-   ========================================================================== */
-.experience-content h3 {
-    font-size: 1.3rem;
-    color: var(--accent-blue);
-    margin: 28px 0 16px 0;
-}
-
+/* 經歷與證照 */
 .experience-list {
     display: flex;
     flex-direction: column;
@@ -370,22 +320,12 @@ a {
 }
 
 .experience-item {
-    background: var(--bg-secondary);
     padding: 18px 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-.experience-item h4 {
-    font-size: 1.05rem;
-    color: var(--text-primary);
-    margin-bottom: 6px;
 }
 
 .experience-item ul {
     margin-left: 20px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
 .certifications-grid {
@@ -395,27 +335,20 @@ a {
 }
 
 .cert-category {
-    background: var(--bg-secondary);
     padding: 16px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
 }
 
 .cert-category h4 {
-    color: var(--accent-blue);
+    color: var(--accent-blue) !important;
     margin-bottom: 10px;
-    font-size: 1rem;
 }
 
 .cert-category ul {
     list-style: none;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
 }
 
-/* ==========================================================================
-   10. 聯絡與頁尾 (Contact & Footer)
-   ========================================================================== */
+/* 聯絡資訊與頁尾 */
 .contact-content {
     text-align: center;
     max-width: 600px;
@@ -433,22 +366,19 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--bg-secondary);
     padding: 10px 20px;
     border-radius: 30px;
-    border: 1px solid var(--border-color);
     font-weight: 500;
 }
 
 .contact-link:hover {
     border-color: var(--accent-blue);
-    color: var(--accent-blue);
 }
 
 footer {
     padding: 30px 0;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--text-secondary);
     background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
 }
