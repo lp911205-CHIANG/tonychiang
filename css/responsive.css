@@ -3,7 +3,7 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* 手機版隱藏桌面選單，點擊三條線後展開 */
+    /* 1. 導覽列與手機選單適配 */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -24,7 +24,7 @@
         left: 0;
     }
 
-    /* 漢堡選單按鈕設定 (增加點擊範圍) */
+    /* 漢堡選單按鈕設定 */
     .hamburger {
         display: block;
         cursor: pointer;
@@ -53,45 +53,79 @@
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* 微調手機版的主題與語言按鈕大小 */
+    /* 切換按鈕大小優化 */
     .btn-toggle {
-        padding: 4px 8px;
+        padding: 5px 10px;
         font-size: 0.75rem;
     }
 
-    /* Hero 區塊手機版適配 */
+    /* 2. Hero 區塊手機版字級與排版優化 */
+    .hero {
+        padding: 40px 16px !important;
+        min-height: auto !important;
+    }
+
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 32px !important;
+        gap: 28px !important;
     }
 
-    .hero-text-block h1, 
-    .hero-text-block h2, 
+    .hero-text-block h1 {
+        font-size: 2.3rem !important;
+        text-align: center !important;
+    }
+
+    .hero-text-block h2 {
+        font-size: 1.4rem !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+    }
+
     .hero-subtitle, 
     .hero-description {
         text-align: center !important;
+        font-size: 0.98rem !important;
     }
 
     .hero-buttons {
         justify-content: center !important;
+        flex-wrap: wrap;
+        gap: 12px !important;
     }
 
     .hero-image-block img {
-        width: 260px !important;
-        height: 320px !important;
+        width: 240px !important;
+        height: 300px !important;
     }
 
-    /* 個人簡介與技能卡片 */
+    /* 3. 網格卡片單欄化 (方法論 / 研究領域 / 證照) */
     .about-content,
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .skills-grid,
+    .research-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
     }
 
-    /* 競賽卡片 */
+    /* 4. 競賽與研究計畫卡片適配 */
     .competition-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .award {
+        align-self: flex-start;
+    }
+
+    /* 5. 通用區塊邊距與標題大小 */
+    section {
+        padding: 50px 0 !important;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 24px !important;
     }
 }
