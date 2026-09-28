@@ -1,131 +1,486 @@
 /* ==========================================================================
-   響應式設計 (Responsive Styles)
+   全域變數與 Pure Black OLED 主題定義
    ========================================================================== */
+:root {
+    /* OLED 純黑暗色主題 (預設) */
+    --bg-primary: #000000;
+    --bg-secondary: #121212;
+    --bg-card: #1c1c1e;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent-blue: #38bdf8;
+    --accent-blue-hover: #0284c7;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --nav-bg: rgba(0, 0, 0, 0.85);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-@media (max-width: 768px) {
-    /* 1. 導覽列與手機選單適配 */
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 60px;
-        flex-direction: column;
-        background-color: var(--bg-secondary);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-        padding: 24px 0;
-        gap: 20px;
-        border-bottom: 1px solid var(--border-color);
-        z-index: 999;
-    }
+/* 亮色主題適配 (Light Theme Mode) */
+body.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-blue: #0284c7;
+    --accent-blue-hover: #0369a1;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+}
 
-    .nav-menu.active {
-        left: 0;
-    }
+/* ==========================================================================
+   基礎 Reset 與字體設定
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* 漢堡選單按鈕設定 */
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        padding: 5px;
-        z-index: 1001;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .hamburger span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        margin: 5px 0;
-        background-color: var(--text-primary);
-        transition: var(--transition);
-    }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
 
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
 
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
+/* 通用標題樣式 */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-primary);
+    position: relative;
+}
 
-    /* 切換按鈕大小優化 */
-    .btn-toggle {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-blue);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
 
-    /* 2. Hero 區塊手機版字級與排版優化 */
-    .hero {
-        padding: 40px 16px !important;
-        min-height: auto !important;
-    }
+/* ==========================================================================
+   導覽列 (Navbar)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 14px 0;
+    transition: var(--transition);
+}
 
-    .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 28px !important;
-    }
+.logo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
 
-    .hero-text-block h1 {
-        font-size: 2.3rem !important;
-        text-align: center !important;
-    }
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
 
-    .hero-text-block h2 {
-        font-size: 1.4rem !important;
-        text-align: center !important;
-        margin-bottom: 16px !important;
-    }
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
 
-    .hero-subtitle, 
-    .hero-description {
-        text-align: center !important;
-        font-size: 0.98rem !important;
-    }
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-blue);
+}
 
-    .hero-buttons {
-        justify-content: center !important;
-        flex-wrap: wrap;
-        gap: 12px !important;
-    }
+/* 切換按鈕 (Theme & Lang) */
+.btn-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
 
-    .hero-image-block img {
-        width: 240px !important;
-        height: 300px !important;
-    }
+.btn-toggle:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
 
-    /* 3. 網格卡片單欄化 (方法論 / 研究領域 / 證照) */
-    .about-content,
-    .skills-grid,
-    .research-grid,
-    .certifications-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-    }
+.hamburger {
+    display: none;
+}
 
-    /* 4. 競賽與研究計畫卡片適配 */
-    .competition-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
+/* ==========================================================================
+   Hero Section (個人主視覺)
+   ========================================================================== */
+.hero {
+    background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+}
 
-    .award {
-        align-self: flex-start;
-    }
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
 
-    /* 5. 通用區塊邊距與標題大小 */
-    section {
-        padding: 50px 0 !important;
-    }
+.btn-primary {
+    background: var(--accent-blue);
+    color: #000000;
+}
 
-    h2 {
-        font-size: 1.75rem !important;
-        margin-bottom: 24px !important;
-    }
+.btn-primary:hover {
+    background: var(--accent-blue-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   個人簡介與 4 模組技能網格 (.skills-grid)
+   ========================================================================== */
+.about-text p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.skill-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 24px;
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.skill-card h3 {
+    font-size: 1.15rem;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 16px;
+}
+
+.skill-card li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   研究領域區塊 (.research-grid)
+   ========================================================================== */
+.research-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.research-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+}
+
+.research-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.research-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.research-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   學術發表區塊 (.publications-content)
+   ========================================================================== */
+.publications-content h3 {
+    font-size: 1.35rem;
+    color: var(--accent-blue);
+    margin: 36px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.publications-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.publication-item {
+    transition: var(--transition);
+}
+
+.publication-item:hover {
+    border-color: var(--accent-blue) !important;
+    background: var(--bg-card) !important;
+    transform: translateX(4px);
+}
+
+.publication-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.publication-item strong {
+    color: var(--text-primary);
+}
+
+.publication-item em {
+    color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   競賽榮譽與研究計畫 (.competitions)
+   ========================================================================== */
+.competitions-content h3 {
+    font-size: 1.35rem;
+    color: var(--accent-blue);
+    margin: 36px 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.competitions-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.competition-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    transition: var(--transition);
+}
+
+.competition-item:hover {
+    border-color: var(--accent-blue);
+    transform: translateX(4px);
+}
+
+.award {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    white-space: nowrap;
+}
+
+.competition-item .content p:first-child {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.competition-item .content p:last-child {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   經歷與證照 (.experience)
+   ========================================================================== */
+.experience-content h3 {
+    font-size: 1.35rem;
+    color: var(--accent-blue);
+    margin: 36px 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.experience-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: var(--transition);
+}
+
+.experience-item:hover {
+    border-color: var(--accent-blue);
+}
+
+.experience-item h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.experience-item ul {
+    margin-left: 20px;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+/* 證照網格 */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.cert-category {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cert-category h4 {
+    color: var(--accent-blue);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cert-category ul {
+    list-style: none;
+}
+
+.cert-category li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   聯絡方式與頁尾 (Contact & Footer)
+   ========================================================================== */
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-3px);
+}
+
+footer {
+    padding: 36px 0;
+    text-align: center;
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    border-top: 1px solid var(--border-color);
 }
