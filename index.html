@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="江育霖 - | Tony Y. L. Chiang - Smart Healthcare & Decision Science Researcher">
-    <title data-zh="江育霖 (Tony Y. L. Chiang) - 個人學術網站" data-en="Tony Y. L. Chiang - Academic Website">江育霖 (Tony Y. L. Chiang) - 個人學術網站</title>
+    <meta name="description" content="江育霖 - | Tony Y. L. Chiang - Smart Healthcare Researcher">
+    <title data-zh="江育霖 (Tony Y. L. Chiang) - 個人網站" data-en="Tony Y. L. Chiang - Personal Website">江育霖 (Tony Y. L. Chiang) - 個人網站</title>
     <link rel="stylesheet" href="css/style.css?v=2">
     <link rel="stylesheet" href="css/responsive.css?v=2">
 </head>
@@ -16,7 +16,7 @@
                 <h1>Tony Y. L. Chiang</h1>
             </div>
 
-            <!-- 右側控制區：包含主題/語系切換按鈕與手機漢堡選單 -->
+            <!-- 右側按鈕區：包含切換按鈕與手機漢堡選單 -->
             <div class="nav-controls" style="display: flex; align-items: center; gap: 10px;">
                 <div class="toggle-buttons" style="display: flex; gap: 6px; align-items: center;">
                     <button id="theme-toggle" class="btn-toggle">☀️ 亮色</button>
@@ -30,11 +30,11 @@
                 </div>
             </div>
 
-            <!-- 手機版選單 -->
+            <!-- 手機版點擊三條線後滑出的選單 -->
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active" data-zh="首頁" data-en="Home">首頁</a></li>
                 <li><a href="#about" class="nav-link" data-zh="個人簡介" data-en="About">個人簡介</a></li>
-                <li><a href="#research" class="nav-link" data-zh="研究領域" data-en="Research">研究領域</a></li>
+                <li><a href="#research" class="nav-link" data-zh="研究興趣" data-en="Research">研究興趣</a></li>
                 <li><a href="#publications" class="nav-link" data-zh="學術發表" data-en="Publications">學術發表</a></li>
                 <li><a href="#competitions" class="nav-link" data-zh="競賽與榮譽" data-en="Honors">競賽與榮譽</a></li>
                 <li><a href="#experience" class="nav-link" data-zh="經歷" data-en="Experience">經歷</a></li>
@@ -47,14 +47,14 @@
     <section id="home" class="hero" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 60px 20px;">
         <div class="hero-container" style="display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 1050px; width: 100%; flex-wrap: wrap;">
             
-            <!-- Left Text Block -->
+            <!-- Hero Section 左側文字區塊 -->
             <div class="hero-text-block" style="flex: 1; min-width: 320px; text-align: left;">
                 <h1 style="margin: 0 0 10px 0; font-size: 3.2rem; color: var(--text-primary); font-weight: 700; text-align: left;">江育霖</h1>
                 
                 <h2 style="margin: 0 0 24px 0; font-size: 1.8rem; font-weight: 500; color: var(--accent-blue); font-style: italic; text-align: left; border: none; padding: 0;">Tony Y. L. Chiang</h2>
 
-                <p class="hero-subtitle" data-zh="國立臺北護理健康大學 健康事業管理系碩士班" data-en="M.S. Student in Healthcare Management, NTUNHS" style="font-size: 1.2rem; font-weight: 600; color: #64b5f6; margin-bottom: 12px; text-align: left; padding: 0;">國立臺北護理健康大學 健康事業管理系碩士班</p>
-                <p class="hero-description" data-zh="專注於智慧健康照護、多準則決策分析（MCDM）、動態 Z 數與混合人工智慧決策模型之建構與實務應用。" data-en="Specializing in Smart Healthcare, Multi-Criteria Decision-Making (MCDM), Dynamic Z-numbers, and Hybrid AI Decision Models." style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 32px; text-align: left;">專注於智慧健康照護、多準則決策分析（MCDM）、動態 Z 數與混合人工智慧決策模型之建構與實務應用。</p>
+                <p class="hero-subtitle" data-zh="專注於智慧健康照護領域" data-en="Focusing on Smart Healthcare & Decision Science" style="font-size: 1.3rem; font-weight: 600; color: #64b5f6; margin-bottom: 12px; text-align: left; padding: 0;">專注於智慧健康照護領域</p>
+                <p class="hero-description" data-zh="致力設計並結合混合人工智慧技術的健康決策模型" data-en="Dedicated to designing hybrid AI-driven healthcare decision-making models" style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 32px; text-align: left;">致力設計並結合混合人工智慧技術的健康決策模型</p>
                 
                 <div class="hero-buttons" style="display: flex; gap: 16px; justify-content: flex-start;">
                     <a href="#about" class="btn btn-primary" data-zh="了解更多" data-en="Learn More">了解更多</a>
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <!-- Right Profile Image Block -->
+            <!-- 右側照片區塊 -->
             <div class="hero-image-block" style="flex: 0 0 auto; display: flex; justify-content: center; align-items: center;">
                <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang" 
                     style="width: 340px; height: 420px; border: none; box-shadow: none; border-radius: 4px; object-fit: cover; image-rendering: -webkit-optimize-contrast; filter: contrast(104%) brightness(102%);">
@@ -74,120 +74,60 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 data-zh="個人簡介與專業核心" data-en="About & Core Expertise">個人簡介與專業核心</h2>
+            <h2 data-zh="個人簡介" data-en="About Me">個人簡介</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p data-zh="我深耕於智慧健康照護與決策科學領域，致力設計並結合混合人工智慧（Hybrid AI）與動態不確定性數學模型。在學術研究中，我整合多準則決策分析（MCDM）、模糊理論（Fuzzy Sets / Dynamic Z-numbers）與文獻計量學，精準提煉健康照護決策的核心構面與權重結構。" 
-                       data-en="Focusing on smart healthcare and decision science, I specialize in combining hybrid AI technologies with multi-criteria decision-making (MCDM), dynamic Z-numbers, and fuzzy logic to resolve complex decision problems in healthcare systems.">
-                       我深耕於智慧健康照護與決策科學領域，致力設計並結合混合人工智慧（Hybrid AI）與動態不確定性數學模型。在學術研究中，我整合多準則決策分析（MCDM）、模糊理論（Fuzzy Sets / Dynamic Z-numbers）與文獻計量學，精準提煉健康照護決策的核心構面與權重結構。
+                    <p data-zh="專注於智慧健康照護領域，致力設計並結合混合人工智慧技術的健康決策模型。在研究中，我使用模糊理論與多準則決策方法（MCDM），以提升模型的實務應用性與決策品質。" 
+                       data-en="Focusing on smart healthcare, I specialize in combining hybrid AI technologies with multi-criteria decision-making (MCDM) and fuzzy logic to enhance decision quality and practical application in health systems.">
+                       專注於智慧健康照護領域，致力設計並結合混合人工智慧技術的健康決策模型。在研究中，我使用模糊理論與多準則決策方法（MCDM），以提升模型的實務應用性與決策品質。
                     </p>
-                    <p data-zh="具備強烈的系統思維與模組化演算法設計能力，研究範疇跨越醫院資訊系統可用性評估、高齡友善城市資源配置、智慧體檢中心營運轉型及虛擬代言人行銷。強調理論與實務決策的落地轉化，關注其在健康事業管理中的實質績效表現。" 
-                       data-en="Equipped with systems thinking and modular design capabilities, my research spans HIS usability evaluation, age-friendly city resource allocation, smart health checkup center operations, and virtual endorser marketing.">
-                       具備強烈的系統思維與模組化演算法設計能力，研究範疇跨越醫院資訊系統可用性評估、高齡友善城市資源配置、智慧體檢中心營運轉型及虛擬代言人行銷。強調理論與實務決策的落地轉化，關注其在健康事業管理中的實質績效表現。
+                    <p data-zh="具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。" 
+                       data-en="Equipped with systems thinking and modular design capabilities, I emphasize practical translation of techniques into measurable benefits within healthcare environments.">
+                       具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。
                     </p>
                 </div>
-
-                <!-- 精通的方法論與工具整理 (Restructured Methodologies & Tools) -->
-                <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
-                    
+                <div class="skills-grid">
                     <div class="skill-card">
-                        <h3 data-zh="多準則決策分析 (MCDM)" data-en="MCDM Frameworks">多準則決策分析 (MCDM)</h3>
+                        <h3 data-zh="研究方法" data-en="Research Methodologies">研究方法</h3>
                         <ul>
-                            <li>AHP & FUCOM </li>
-                            <li>CRITIC, LOPCOW, MEREC </li>
-                            <li>RAFSI, TOPSIS, Modified VIKOR</li>
-                            <li data-zh="主客觀權重整合與架構檢視" data-en="Hybrid Weighting Integration">主客觀權重整合與架構檢視</li>
+                            <li data-zh="文獻計量分析" data-en="Bibliometric Analysis">文獻計量分析</li>
+                            <li data-zh="多準則決策分析" data-en="Multi-Criteria Decision Analysis (MCDM)">多準則決策分析</li>
+                            <li data-zh="統計分析" data-en="Statistical Analysis">統計分析</li>
                         </ul>
                     </div>
-
                     <div class="skill-card">
-                        <h3 data-zh="模糊理論與不確定性建模" data-en="Fuzzy Theory & Uncertainty">模糊理論與不確定性建模</h3>
+                        <h3 data-zh="分析軟體" data-en="Analytical Software">分析軟體</h3>
                         <ul>
-                            <li>Dynamic Z-numbers (動態 Z 數)</li>
-                            <li>Spherical Fuzzy Sets (球體模糊集)</li>
-                            <li>Fuzzy Delphi Method (模糊德爾菲法)</li>
-                            <li>Rough Set Theory (粗糙集理論)</li>
+                            <li>SAS, SPSS, R</li>
+                            <li>QGIS, LINGO</li>
+                            <li>VOSviewer, Excel, Python</li>
                         </ul>
                     </div>
-
-                    <div class="skill-card">
-                        <h3 data-zh="文獻計量與知識圖譜" data-en="Scientometrics & Mining">文獻計量與知識圖譜</h3>
-                        <ul>
-                            <li>VOSviewer (關鍵字共現與網絡視覺化)</li>
-                            <li data-zh="系統化文獻綜述與趨勢分析" data-en="Systematic Literature Review">系統化文獻綜述與趨勢分析</li>
-                            <li data-zh="大數據文本分析與熱點挖掘" data-en="Text Mining & Hotspot Discovery">大數據文本分析與熱點挖掘</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-card">
-                        <h3 data-zh="分析軟體與優化工具" data-en="Software & Analytics Tool Stack">分析軟體與優化工具</h3>
-                        <ul>
-                            <li>SAS, SPSS, R (生物統計與大數據串接)</li>
-                            <li>Python (Pandas, NumPy, Matplotlib)</li>
-                            <li>QGIS (空間分析) & LINGO (運籌優化)</li>
-                            <li>Microsoft Access & Excel Advanced Analytics</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Focal Areas Section -->
+    <!-- Research Interests Section -->
     <section id="research" class="research">
         <div class="container">
-            <h2 data-zh="主要研究領域" data-en="Research Focal Areas">主要研究領域</h2>
-            <div class="research-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-                
-                <!-- 領域 1 -->
+            <h2 data-zh="研究興趣" data-en="Research Interests">研究興趣</h2>
+            <div class="research-grid">
                 <div class="research-card">
-                    <img src="images/smart medical.jpg" alt="智慧健康與醫療資訊系統">
-                    <div class="research-card-body" style="padding: 20px;">
-                        <div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;">
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">HIS Usability</span>
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border-color); color: var(--text-secondary);">Healthcare Robots</span>
-                        </div>
-                        <h3 data-zh="智慧健康與醫療資訊系統" data-en="Smart Healthcare & HIS">智慧健康與醫療資訊系統</h3>
-                        <p data-zh="專注於下一代醫院資訊系統 (HIS) 之可用性評估、高齡健康照護機器人核心需求決策，以及智慧體檢中心營運轉型評估。" 
-                           data-en="Evaluating usability indicators for next-generation hospital information systems, healthcare robots, and smart health checkup centers.">
-                           專注於下一代醫院資訊系統 (HIS) 之可用性評估、高齡健康照護機器人核心需求決策，以及智慧體檢中心營運轉型評估。
-                        </p>
-                    </div>
+                    <img src="images/smart medical.jpg" alt="智慧健康照護">
+                    <h3 data-zh="智慧健康照護" data-en="Smart Healthcare">智慧健康照護</h3>
+                    <p data-zh="結合AI與決策科學的醫療應用" data-en="Medical applications combining AI and decision science">結合AI與決策科學的醫療應用</p>
                 </div>
-
-                <!-- 領域 2 -->
                 <div class="research-card">
-                    <img src="images/mcdm.jpg.png" alt="混合式多準則決策模型">
-                    <div class="research-card-body" style="padding: 20px;">
-                        <div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;">
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">Dynamic Z-numbers</span>
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border-color); color: var(--text-secondary);">FUCOM & RAFSI</span>
-                        </div>
-                        <h3 data-zh="混合式多準則決策模型" data-en="Hybrid MCDM & AI Models">混合式多準則決策模型</h3>
-                        <p data-zh="設計結合動態 Z 數與模糊德爾菲法（FDM）之決策架構，解決主客觀權重命名謬誤，提升複雜醫療環境下之決策精準度。" 
-                           data-en="Developing decision frameworks combining dynamic Z-numbers and Fuzzy Delphi method to improve decision accuracy under uncertainty.">
-                           設計結合動態 Z 數與模糊德爾菲法（FDM）之決策架構，提升複雜醫療環境下之決策精準度。
-                        </p>
-                    </div>
+                    <img src="images/mcdm.jpg.png" alt="決策模型於醫療機構評估應用">
+                    <h3 data-zh="決策模型於醫療機構評估應用" data-en="MCDM in Healthcare Evaluation">決策模型於醫療機構評估應用</h3>
+                    <p data-zh="多準則決策方法的實務應用" data-en="Practical application of multi-criteria decision frameworks">多準則決策方法的實務應用</p>
                 </div>
-
-                <!-- 領域 3 -->
                 <div class="research-card">
                     <img src="images/ai.jfif" alt="虛擬人與健康行銷">
-                    <div class="research-card-body" style="padding: 20px;">
-                        <div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;">
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);">Digital Endorsers</span>
-                            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border-color); color: var(--text-secondary);">VOSviewer Analysis</span>
-                        </div>
-                        <h3 data-zh="虛擬人與健康行銷" data-en="Virtual Humans & Health Marketing">虛擬人與健康行銷</h3>
-                        <p data-zh="探討虛擬代言人在醫療保健產品與品牌行銷中的可信度機制，並運用 VOSviewer 進行健康傳播領域之文獻計量熱點分析。" 
-                           data-en="Investigating credibility and marketing effectiveness of digital human endorsers in healthcare products using bibliometrics and MCDM.">
-                           探討虛擬代言人在醫療保健產品與品牌行銷中的可信度機制，並運用 VOSviewer 進行健康傳播領域之文獻計量熱點分析。
-                        </p>
-                    </div>
+                    <h3 data-zh="虛擬人與健康行銷" data-en="Virtual Humans & Health Marketing">虛擬人與健康行銷</h3>
+                    <p data-zh="虛擬代言人的可信度與行銷效果研究" data-en="Research on credibility and marketing effectiveness of digital human endorsers">虛擬代言人的可信度與行銷效果研究</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -200,11 +140,7 @@
                 
                 <h3 data-zh="期刊與專論論文" data-en="Journal Articles & Monographs">期刊與專論論文</h3>
                 <div class="publication-list">
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2026</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">醫學專論</span>
-                        </div>
+                    <div class="publication-item">
                         <p data-zh="鄒淏侖、江育霖、黃昱緯、黃三翁、莊海華（2026）。健康識能與體重管理之關聯性。台灣肥胖醫學會會訊：醫學專論，2，9–16。"
                            data-en="Tzou, H. L., Chiang, T. Y. L., Huang, Y. W., Huang, S. W., & Chuang, H. H. (2026). The association between health literacy and weight management. Journal of Taiwan Association for the Study of Obesity: Medical Monograph, 2, 9–16.">
                            鄒淏侖、<strong>江育霖</strong>、黃昱緯、黃三翁、莊海華（2026）。健康識能與體重管理之關聯性。<em>台灣肥胖醫學會會訊：醫學專論</em>，2，9–16。
@@ -214,114 +150,56 @@
 
                 <h3 data-zh="國際會議論文" data-en="International Conference Papers">國際會議論文</h3>
                 <div class="publication-list">
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2026.09</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Chiang, T. Y. L., Huang, S. C. H., Li, J. Y., Yan, C., Yu, L. Y. F., & Huang, S. W.</strong> (2026, September 10). Applying dynamic Z-number Fuzzy Delphi method to construct usability evaluation indicators for next-generation hospital information systems. <em>East Eurasia Inter-regional Conference 2026 (EEIRC 2026) — International Conference on Health, Care and Well-being: Innovation, Technology and Interdisciplinary Integration</em>, National Taipei University of Nursing and Health Sciences, Taipei, Taiwan.</p>
+                    <div class="publication-item">
+                        <p><strong>Chiang, T. Y. L., Huang, S. C. H., Li, J. Y., Yan, C., Yu, L. Y. F., & Huang, S. W.</strong> (2026, September 10). Applying dynamic Z-number Fuzzy Delphi method to construct usability evaluation indicators for next-generation hospital information systems. <em>East Eurasia Inter-regional Conference 2026 (EEIRC 2026) — International Conference on Health, Care and Well-being: Innovation, Technology and Interdisciplinary Integration</em>, National Taipei University of Nursing and Health Sciences, Taipei, Taiwan. [Oral]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2026.07</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Chiang, T. Y. L., Xia, J. H., Yan, C., Tsai, Y. L., Yu, L. Y. F., Huang, S. W., & Tzeng, G. H.</strong> (2026, July 12–17). Attribute clustering-based objective decision model for age-friendly cities (AFC) strategic resource allocation and governance. <em>24th Conference of the International Federation of Operational Research Societies (IFORS 2026)</em>, University of Vienna, Austria.</p>
+                    <div class="publication-item">
+                        <p><strong>Chiang, T. Y. L., Xia, J. H., Yan, C., Tsai, Y. L., Yu, L. Y. F., Huang, S. W., & Tzeng, G. H.</strong> (2026, July 12–17). Attribute clustering-based objective decision model for age-friendly cities (AFC) strategic resource allocation and governance. <em>24th Conference of the International Federation of Operational Research Societies</em>, University of Vienna, Austria. [Oral]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2026.07</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Yu, L. Y. F., Xia, J.-H., Chang, C., Pang, F.-M., Chiang, T. Y. L., Huang, S.-W., & Tzeng, G.-H.</strong> (2026, July 12–17). Exploring healthy and happy governance strategies in aged and super-aged cities using an objective aggregated decision-making model. <em>24th Conference of the International Federation of Operational Research Societies (IFORS 2026)</em>, University of Vienna, Austria.</p>
+                    <div class="publication-item">
+                        <p><strong>Yu, L. Y. F., Xia, J.-H., Chang, C., Pang, F.-M., Chiang, T. Y. L., Huang, S.-W., & Tzeng, G.-H.</strong> (2026, July 12–17). Exploring healthy and happy governance strategies in aged and super-aged cities using an objective aggregated decision-making model. <em>24th Conference of the International Federation of Operational Research Societies</em>, University of Vienna, Austria. [Oral]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.12</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Poster Presentation</span>
-                        </div>
-                        <p><strong>Chiang, T. Y. L., Hou, K. C., Chen, Y. T., Xia, J. H., Yu, L. Y. F., & Huang, S. W.</strong> (2025, December 12). A bibliometric analysis of immersive technologies and metaverse applications for healthy aging. <em>2025 Science Discovery X AI International Conference</em>, Shih Hsin University, Taipei, Taiwan.</p>
+                    <div class="publication-item">
+                        <p><strong>Chiang, T. Y. L., Hou, K. C., Chen, Y. T., Xia, J. H., Yu, L. Y. F., & Huang, S. W.</strong> (2025, December 12). A bibliometric analysis of immersive technologies and metaverse applications for healthy aging. <em>2025 Science Discovery X AI International Conference</em>, Shih Hsin University, Taipei, Taiwan. [Poster]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.12</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Poster Presentation</span>
-                        </div>
-                        <p><strong>Yu, L. Y. F., Chiang, T. Y. L., Xia, J. H., Lai, C. H., Huang, S. W., & Tzeng, G. H.</strong> (2025, December 12). Applying entropy and modified TOPSIS to construct an IoT-driven smart city evaluation system. <em>2025 Science Discovery X AI International Conference</em>, Shih Hsin University, Taipei, Taiwan.</p>
+                    <div class="publication-item">
+                        <p><strong>Yu, L. Y. F., Chiang, T. Y. L., Xia, J. H., Lai, C. H., Huang, S. W., & Tzeng, G. H.</strong> (2025, December 12). Applying entropy and modified TOPSIS to construct an IoT-driven smart city evaluation system. <em>2025 Science Discovery X AI International Conference</em>, Shih Hsin University, Taipei, Taiwan. [Poster]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.11</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Chiang, T. Y. L., Yu, L. Y. F., Chang, W. L., Xia, J. H., Chen, K. C., Huang, S. W., & Tzeng, G. H.</strong> (2025, November 5–8). Dynamic Z-numbers-based fuzzy Delphi method for identifying seven core criteria for intelligent transformation in premium health examination centers. <em>2025 International Conference on Fuzzy Theory and Its Applications (iFUZZY 2025)</em>, National Yang Ming Chiao Tung University, Taiwan.</p>
+                    <div class="publication-item">
+                        <p><strong>Chiang, T. Y. L., Yu, L. Y. F., Chang, W. L., Xia, J. H., Chen, K. C., Huang, S. W., & Tzeng, G. H.</strong> (2025, November 5–8). Dynamic Z-numbers-based fuzzy Delphi method for identifying seven core criteria for intelligent transformation in premium health examination centers. <em>2025 International Conference on Fuzzy Theory and Its Applications (iFUZZY 2025)</em>, National Yang Ming Chiao Tung University, Taiwan. [Oral]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.11</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Yu, L. Y. F., Chiang, T. Y. L., Xia, J. H., Chen, Y. T., Vo, T. T., & Huang, S. W.</strong> (2025). The construction of an evaluation system for boutique gym business administration using dynamic Z-numbers and the fuzzy Delphi method. <em>2025 International Conference on Fuzzy Theory and Its Applications (iFUZZY 2025)</em>, National Yang Ming Chiao Tung University, Taiwan.</p>
+                    <div class="publication-item">
+                        <p><strong>Yu, L. Y. F., Chiang, T. Y. L., Xia, J. H., Chen, Y. T., Vo, T. T., & Huang, S. W.</strong> (2025). The construction of an evaluation system for boutique gym business administration using dynamic Z-numbers and the fuzzy Delphi method. <em>2025 International Conference on Fuzzy Theory and Its Applications (iFUZZY 2025)</em>, National Yang Ming Chiao Tung University, Taiwan. [Oral]</p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.06</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">Oral Presentation</span>
-                        </div>
-                        <p><strong>Huang, S. W., Xia, J. H., Liou, J., Chiang, T. Y. L., & Tzeng, G. H.</strong> (2025, June 22–25). Smart health check-up 2.0: Developing a performance evaluation system for health examination centers using AI and big data analytics. <em>The 34th European Conference on Operational Research (EURO 2025)</em>, University of Leeds, Leeds, United Kingdom.</p>
+                    <div class="publication-item">
+                        <p><strong>Huang, S. W., Xia, J. H., Liou, J., Chiang, T. Y. L., & Tzeng, G. H.</strong> (2025, June 22–25). Smart health check-up 2.0: Developing a performance evaluation system for health examination centers using AI and big data analytics. <em>The 34th European Conference on Operational Research (EURO 2025)</em>, University of Leeds, Leeds, United Kingdom. [Oral]</p>
                     </div>
                 </div>
 
                 <h3 data-zh="國內會議論文" data-en="Domestic Conference Papers">國內會議論文</h3>
                 <div class="publication-list">
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2026.07</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">海報發表</span>
-                        </div>
+                    <div class="publication-item">
                         <p data-zh="顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。2026休閒產業與健康促進學術研討會，臺北市，臺灣。[海報發表]"
                            data-en="Yan, C. L., Chiang, T. Y. L., Lai, C. H., Tan, H. R., & Huang, S. W. (2026, July). Identifying core criteria of Generation Z purchasing health supplements using Z-number-based fuzzy Delphi method. 2026 Academic Conference on Leisure Industry and Health Promotion, Taipei, Taiwan. [Poster]">
-                           <strong>顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁</strong>（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。<em>2026休閒產業與健康促進學術研討會</em>，臺北市，臺灣。
+                           <strong>顏靖霖、江育霖、賴政豪、譚漢儒、黃三翁</strong>（2026年7月）。基於 Z 數的模糊德爾菲法識別 Z 世代購買保健食品的核心因素。<em>2026休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[海報發表]
                         </p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.06</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">口頭發表</span>
-                        </div>
+                    <div class="publication-item">
                         <p data-zh="江育霖、游亦芳、陳巧珊、夏建華、黃三翁（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。2025大健康科學暨休閒產業與健康促進學術研討會，臺北市，臺灣。[口頭發表]"
                            data-en="Chiang, T. Y. L., Yu, L. Y. F., Chen, C. S., Xia, J. H., & Huang, S. W. (2025, June 13). Research trends and hot topics of virtual avatars in health communication and promotion: A bibliometric analysis using VOSviewer. 2025 Conference on Grand Health Science, Leisure Industry, and Health Promotion, Taipei, Taiwan. [Oral]">
-                           <strong>江育霖、游亦芳、陳巧珊、夏建華、黃三翁</strong>（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。
+                           <strong>江育霖、游亦芳、陳巧珊、夏建華、黃三翁</strong>（2025年6月13日）。虛擬角色於健康傳播與促進領域研究趨勢與熱點：以 VOSviewer 為工具文獻計量分析。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]
                         </p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.06</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">口頭發表</span>
-                        </div>
+                    <div class="publication-item">
                         <p data-zh="游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。2025大健康科學暨休閒產業與健康促進學術研討會，臺北市，臺灣。[口頭發表]"
                            data-en="Yu, L. Y. F., Guo, S. Y., Chiang, T. Y. L., Xu, W., Xia, J. H., & Huang, S. W. (2025, June 13). Constructing an evaluation framework for campus gym management using dynamic Z-numbers and fuzzy Delphi method. 2025 Conference on Grand Health Science, Leisure Industry, and Health Promotion, Taipei, Taiwan. [Oral]">
-                           <strong>游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁</strong>（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。
+                           <strong>游亦芳、郭書瑜、江育霖、徐瑋、夏建華、黃三翁</strong>（2025年6月13日）。應用動態Z數與模糊德爾菲法建構學校健身房經營管理之評估架構。<em>2025大健康科學暨休閒產業與健康促進學術研討會</em>，臺北市，臺灣。[口頭發表]
                         </p>
                     </div>
-
-                    <div class="publication-item" style="margin-bottom: 16px; padding: 18px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--accent-blue);">
-                        <div style="display: flex; gap: 8px; margin-bottom: 8px; align-items: center;">
-                            <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">2025.05</span>
-                            <span style="border: 1px solid var(--border-color); color: var(--text-secondary); padding: 2px 10px; border-radius: 12px; font-size: 0.75rem;">口頭發表</span>
-                        </div>
+                    <div class="publication-item">
                         <p data-zh="江育霖、蔡懿玲、游亦芳、黃三翁（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。2025醫護與科技人文研討會，宜蘭縣，臺灣。[口頭發表]"
                            data-en="Chiang, T. Y. L., Tsai, Y. L., Yu, L. Y. F., & Huang, S. W. (2025, May 24). Investigating the credibility of virtual endorsers in brand marketing: Past literature and future trends. 2025 Conference on Healthcare, Technology, and Humanities, Yilan, Taiwan. [Oral]">
-                           <strong>江育霖、蔡懿玲、游亦芳、黃三翁</strong>（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。<em>2025醫護與科技人文研討會</em>，宜蘭縣，臺灣。
+                           <strong>江育霖、蔡懿玲、游亦芳、黃三翁</strong>（2025年5月24日）。虛擬代言人在品牌行銷中的可信度探討：過去研究與未來趨勢。<em>2025醫護與科技人文研討會</em>，宜蘭縣，臺灣。[口頭發表]
                         </p>
                     </div>
                 </div>
@@ -338,7 +216,7 @@
                 <h3 data-zh="競賽成績" data-en="Competition Awards">競賽成績</h3>
                 <div class="competition-list">
                     <div class="competition-item">
-                        <div class="award" data-zh="特優 (第一名)" data-en="Grand Prize (1st Place)">特優 (第一名)</div>
+                        <div class="award" data-zh="特優" data-en="Grand Prize">特優</div>
                         <div class="content">
                             <p><strong data-zh="2026全國健康科技創新競賽" data-en="2026 National Healthcare Technology Innovation Competition">2026全國健康科技創新競賽</strong></p>
                             <p data-zh="珍藏記憶-基於影像識別與敘事轉譯之高齡感念資產APP" data-en="Cherished Memories: An Elderly Sentimental Asset APP Based on Image Recognition and Narrative Translation">珍藏記憶-基於影像識別與敘事轉譯之高齡感念資產APP</p>
@@ -366,7 +244,7 @@
                         </div>
                     </div>
                     <div class="competition-item">
-                        <div class="award" data-zh="特優 (第一名)" data-en="Grand Prize (1st Place)">特優 (第一名)</div>
+                        <div class="award" data-zh="特優" data-en="Grand Prize">特優</div>
                         <div class="content">
                             <p><strong data-zh="2025全國健康科技創新競賽" data-en="2025 National Healthcare Technology Innovation Competition">2025全國健康科技創新競賽</strong></p>
                             <p data-zh="聲控觸感記憶牆 高齡者互動情緒照護牆面系統" data-en="Voice & Touch Interactive Memory Wall: Emotional Care Wall System for Seniors">聲控觸感記憶牆 高齡者互動情緒照護牆面系統</p>
@@ -374,13 +252,13 @@
                     </div>
                 </div>
 
-                <h3 data-zh="國科會研究計畫" data-en="NSTC Research Projects">國科會研究計畫</h3>
+                <h3 data-zh="研究計畫" data-en="Research Projects">研究計畫</h3>
                 <div class="research-funding">
-                    <div class="funding-item" style="padding: 20px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p><strong data-zh="國科會大專生研究計畫 (計畫主持人 / 2025/7 - 2026/2 已結案)" data-en="NSTC College Student Research Project (Principal Investigator / 2025/07–2026/02 Completed)">國科會大專生研究計畫 (計畫主持人 / 2025/7 - 2026/2 已結案)</strong></p>
-                        <p data-zh="計畫編號：114-2813-C-227-001-H (國家科學及技術委員會)" data-en="Project No.: 114-2813-C-227-001-H (National Science and Technology Council)">計畫編號：114-2813-C-227-001-H (國家科學及技術委員會)</p>
+                    <div class="funding-item">
+                        <p><strong data-zh="國科會大專生研究計畫 (2025/7-2026/2 已結案)" data-en="NSTC College Student Research Project (2025/07–2026/02 Completed)">國科會大專生研究計畫 (2025/7-2026/2 已結案)</strong></p>
+                        <p data-zh="計畫編號：114-2813-C-227-001-H" data-en="Project No.: 114-2813-C-227-001-H">計畫編號：114-2813-C-227-001-H</p>
                         <p data-zh="計畫名稱：應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統" data-en="Project Title: Applying Hybrid Decision-Making Models to Construct an Evaluation System for Healthcare Virtual Endorsers">計畫名稱：應用混合式決策模型建構醫療保健產品虛擬代言人的評價系統</p>
-                        <p data-zh="核定金額：NT$ 51,000" data-en="Grant Amount: NTD 51,000">核定金額：NT$ 51,000</p>
+                        <p data-zh="核定金額：51,000元" data-en="Grant Amount: NTD 51,000">核定金額：51,000元</p>
                     </div>
                 </div>
             </div>
@@ -390,10 +268,9 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 data-zh="經歷與服務" data-en="Experience & Governance">經歷與服務</h2>
+            <h2 data-zh="經歷" data-en="Experience">經歷</h2>
             <div class="experience-content">
-                
-                <h3 data-zh="組織決策與系務參與" data-en="Departmental Governance">組織決策與系務參與</h3>
+                <h3 data-zh="組織決策與行政參與" data-en="Organizational Governance & Service">組織決策與行政參與</h3>
                 <div class="experience-list">
                     <div class="experience-item">
                         <h4 data-zh="健康事業管理系所「系實習委員會」委員 (2026-2027)" data-en="Member, Departmental Internship Committee, Dept. of Healthcare Management (2026-2027)">健康事業管理系所「系實習委員會」委員 (2026-2027)</h4>
@@ -403,7 +280,7 @@
                     </div>
                 </div>
 
-                <h3 data-zh="研究與醫療實務經歷" data-en="Research & Healthcare Practice">研究與醫療實務經歷</h3>
+                <h3 data-zh="研究與醫療實務" data-en="Research & Healthcare Practice">研究與醫療實務</h3>
                 <div class="experience-list">
                     <div class="experience-item">
                         <h4 data-zh="國泰醫療財團法人國泰綜合醫院（醫學中心）社區醫學部 (2026)" data-en="Dept. of Community Medicine, Cathay General Hospital (Medical Center) (2026)">國泰醫療財團法人國泰綜合醫院（醫學中心）社區醫學部 (2026)</h4>
@@ -418,7 +295,6 @@
                     </div>
                 </div>
 
-                
                 <h3 data-zh="教育與智慧科技教學經歷" data-en="Teaching & Academic Assistance">教育與智慧科技教學經歷</h3>
                 <div class="experience-list">
                     <div class="experience-item">
@@ -435,18 +311,17 @@
                     </div>
                 </div>
 
-                
-                <h3 data-zh="專業證照" data-en="Professional Certifications">專業證照</h3>
+                <h3 data-zh="專業證照" data-en="Certifications">專業證照</h3>
                 <div class="certifications-grid">
                     <div class="cert-category">
-                        <h4>AI & Assistive Technology</h4>
+                        <h4>AI & Technology</h4>
                         <ul>
                             <li>Netown Babybot Evaluation Certificate</li>
                             <li>Wistron Keeogo Basic Level 1</li>
                         </ul>
                     </div>
                     <div class="cert-category">
-                        <h4>Data & Database</h4>
+                        <h4>Data & Analysis</h4>
                         <ul>
                             <li>Microsoft MOS Access 2016</li>
                         </ul>
@@ -467,7 +342,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -477,9 +351,9 @@
         <div class="container">
             <h2 data-zh="聯絡方式" data-en="Contact">聯絡方式</h2>
             <div class="contact-content">
-                <p data-zh="感謝您瀏覽我的個人學術網站。如有學術交流、研究合作或相關提案，歡迎透過以下方式聯繫：" 
-                   data-en="Thank you for visiting my academic website. For academic exchange or research proposals, please feel free to reach out:">
-                   感謝您瀏覽我的個人學術網站。如有學術交流、研究合作或相關提案，歡迎透過以下方式聯繫：
+                <p data-zh="感謝您對我的研究工作感興趣。如有任何提案、合作機會或詢問，歡迎透過以下方式與我聯絡：" 
+                   data-en="Thank you for your interest in my research. If you have any collaboration proposals or inquiries, please feel free to reach out:">
+                   感謝您對我的研究工作感興趣。如有任何提案、合作機會或詢問，歡迎透過以下方式與我聯絡：
                 </p>
                 <div class="contact-links">
                     <a href="mailto:lp911205@gmail.com" class="contact-link">
