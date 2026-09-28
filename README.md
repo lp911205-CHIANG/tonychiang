@@ -99,7 +99,6 @@ Huang, S. W., Xia, J. H., Liou, J., Chiang, T. Y. L., & Tzeng, G. H. (2025, June
 
 執行期間：2025/07 – 2026/02（已結案）
 
-擔任角色：計畫主持人（獨立執行）
 
 🏆 競賽獲獎與學術經歷
 競賽榮譽 (Awards)
