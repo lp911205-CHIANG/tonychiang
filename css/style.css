@@ -241,17 +241,32 @@ button { font: inherit; color: inherit; }
   margin-bottom: 24px;
 }
 
-.methods { margin-top: 28px; border-top: 1px solid var(--line); font-family: var(--sans); }
+.methods {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+}
+
 .methods > div {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr); /* 固定左欄 180px，右欄自動對齊 */
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
+  align-items: start;
 }
-.methods dt { font-weight: 600; font-size: 1.05rem; }
-.methods dd { color: var(--muted); font-size: 1.05rem; }
 
+.methods dt {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.methods dd {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0;
+}
 /* 動態MCDM演示元件 */
 .demo-embedded {
   margin-top: 32px;
