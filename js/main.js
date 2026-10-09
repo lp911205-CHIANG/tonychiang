@@ -1,79 +1,162 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("✅ main.js 已成功載入並執行！");
+document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
 
-    // 1. DOM 元素選擇器
-    const themeToggleBtn = document.getElementById("theme-toggle");
-    const langToggleBtn = document.getElementById("lang-toggle");
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    const navLinks = document.querySelectorAll(".nav-link");
+    /* --------------------------------------------------------------------------
+       1. 主題切換 (Light / Dark Theme)
+       -------------------------------------------------------------------------- */
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        const curTheme = html.getAttribute('data-theme');
+        const nextTheme = curTheme === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', nextTheme);
+        
+        const isZh = html.getAttribute('lang') === 'zh-TW';
+        themeBtn.textContent = nextTheme === 'light' 
+            ? (isZh ? '🌙 暗色' : '🌙 Dark') 
+            : (isZh ? '☀️ 亮色' : '☀️ Light');
+    });
 
-    // 2. 主題切換 (Theme Toggle)
-    if (themeToggleBtn) {
-        const currentTheme = localStorage.getItem("theme") || "dark";
-        if (currentTheme === "light") {
-            document.body.classList.add("light-theme");
-            themeToggleBtn.textContent = "🌙 暗色";
-        } else {
-            themeToggleBtn.textContent = "☀️ 亮色";
-        }
+    /* --------------------------------------------------------------------------
+       2. 雙語切換 (Bilingual Toggle)
+       -------------------------------------------------------------------------- */
+    const langBtn = document.getElementById('lang-toggle');
+    langBtn.addEventListener('click', () => {
+        const curLang = html.getAttribute('lang');
+        const isZh = curLang === 'zh-TW';
+        const nextLang = isZh ? 'en' : 'zh-TW';
+        
+        html.setAttribute('lang', nextLang);
+        langBtn.textContent = isZh ? '中文' : 'EN';
 
-        themeToggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("light-theme");
-            let theme = "dark";
-            if (document.body.classList.contains("light-theme")) {
-                theme = "light";
-                themeToggleBtn.textContent = "🌙 暗色";
-            } else {
-                themeToggleBtn.textContent = "☀️ 亮色";
-            }
-            localStorage.setItem("theme", theme);
+        // 更新頁面上所有雙語標籤
+        document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+            el.innerHTML = isZh ? el.getAttribute('data-en') : el.getAttribute('data-zh');
         });
-    } else {
-        console.warn("⚠️ 找不到 #theme-toggle 按鈕");
+
+        // 更新搜尋框 Placeholder
+        document.querySelectorAll('[data-zh-placeholder][data-en-placeholder]').forEach(input => {
+            input.placeholder = isZh ? input.getAttribute('data-en-placeholder') : input.getAttribute('data-zh-placeholder');
+        });
+
+        // 更新主題按鈕文字
+        const curTheme = html.getAttribute('data-theme');
+        themeBtn.textContent = curTheme === 'light' 
+            ? (!isZh ? '🌙 暗色' : '🌙 Dark') 
+            : (!isZh ? '☀️ 亮色' : '☀️ Light');
+    });
+
+    /* --------------------------------------------------------------------------
+       3. 手機版漢堡選單控制
+       -------------------------------------------------------------------------- */
+    const menuBtn = document.getElementById('menu-toggle');
+    const siteNav = document.getElementById('site-nav');
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = siteNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // 點擊選單連結後自動關閉手機選單
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            siteNav.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', false);
+        });
+    });
+
+    /* --------------------------------------------------------------------------
+       4. 論文發表關鍵字搜尋與分類篩選器
+       -------------------------------------------------------------------------- */
+    const filterBtns = document.querySelectorAll('.filter');
+    const pubSearch = document.getElementById('pub-search');
+    const pubItems = document.querySelectorAll('.pub');
+
+    let currentFilter = 'all';
+
+    function filterPubs() {
+        const query = pubSearch.value.toLowerCase().trim();
+
+        pubItems.forEach(item => {
+            const type = item.getAttribute('data-type');
+            const text = item.textContent.toLowerCase();
+            
+            const matchFilter = (currentFilter === 'all' || type === currentFilter);
+            const matchSearch = text.includes(query);
+
+            if (matchFilter && matchSearch) {
+                item.removeAttribute('hidden');
+            } else {
+                item.setAttribute('hidden', 'true');
+            }
+        });
     }
 
-    // 3. 雙語語言切換 (Language Toggle)
-    if (langToggleBtn) {
-        let currentLang = localStorage.getItem("lang") || "zh";
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+            btn.setAttribute('aria-pressed', 'true');
+            currentFilter = btn.getAttribute('data-filter');
+            filterPubs();
+        });
+    });
 
-        function updateLanguage(lang) {
-            const translatableElements = document.querySelectorAll("[data-zh][data-en]");
-            translatableElements.forEach(el => {
-                if (lang === "en") {
-                    el.textContent = el.getAttribute("data-en");
+    if (pubSearch) {
+        pubSearch.addEventListener('input', filterPubs);
+    }
+
+    /* --------------------------------------------------------------------------
+       5. MCDM 動態權重與即時排序動畫 (Hero Section Widget)
+       -------------------------------------------------------------------------- */
+    const w1 = document.getElementById('w1');
+    const w2 = document.getElementById('w2');
+    const w3 = document.getElementById('w3');
+
+    if (w1 && w2 && w3) {
+        const alternatives = [
+            { id: 0, rowEl: document.getElementById('rk-row-0'), meterEl: document.getElementById('m1'), scoreEl: document.getElementById('s1'), baseScores: [0.9, 0.8, 0.85] },
+            { id: 1, rowEl: document.getElementById('rk-row-1'), meterEl: document.getElementById('m2'), scoreEl: document.getElementById('s2'), baseScores: [0.6, 0.95, 0.65] },
+            { id: 2, rowEl: document.getElementById('rk-row-2'), meterEl: document.getElementById('m3'), scoreEl: document.getElementById('s3'), baseScores: [0.75, 0.6, 0.90] }
+        ];
+
+        function updateMCDM() {
+            const val1 = parseFloat(w1.value);
+            const val2 = parseFloat(w2.value);
+            const val3 = parseFloat(w3.value);
+
+            document.getElementById('w1-val').textContent = val1.toFixed(2);
+            document.getElementById('w2-val').textContent = val2.toFixed(2);
+            document.getElementById('w3-val').textContent = val3.toFixed(2);
+
+            const sumWeights = val1 + val2 + val3 || 1;
+
+            // 計算綜合評估得分
+            alternatives.forEach(alt => {
+                const totalScore = (alt.baseScores[0] * val1 + alt.baseScores[1] * val2 + alt.baseScores[2] * val3) / sumWeights;
+                alt.currentScore = totalScore;
+            });
+
+            // 根據得分由高至低排序
+            const sorted = [...alternatives].sort((a, b) => b.currentScore - a.currentScore);
+
+            // 更新 DOM 排名與動畫位移 (translateY)
+            sorted.forEach((item, index) => {
+                const pct = Math.round(item.currentScore * 100);
+                item.meterEl.style.width = `${pct}%`;
+                item.scoreEl.textContent = item.currentScore.toFixed(2);
+
+                // 更新行位置與高亮首位
+                item.rowEl.style.transform = `translateY(${index * 44}px)`;
+                item.rowEl.querySelector('.rk').textContent = index + 1;
+
+                if (index === 0) {
+                    item.rowEl.classList.add('top');
                 } else {
-                    el.textContent = el.getAttribute("data-zh");
+                    item.rowEl.classList.remove('top');
                 }
             });
-            langToggleBtn.textContent = lang === "en" ? "中文" : "EN";
-            document.title = lang === "en" ? "Tony Y. L. Chiang - Personal Website" : "江育霖 (Tony Y. L. Chiang) - 個人網站";
         }
 
-        // 初始化語言
-        updateLanguage(currentLang);
-
-        langToggleBtn.addEventListener("click", () => {
-            currentLang = currentLang === "zh" ? "en" : "zh";
-            localStorage.setItem("lang", currentLang);
-            updateLanguage(currentLang);
-        });
-    } else {
-        console.warn("⚠️ 找不到 #lang-toggle 按鈕");
-    }
-
-    // 4. 手機版 Hamburger 選單切換
-    if (hamburger && navMenu) {
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navMenu.classList.remove("active");
-            });
-        });
+        [w1, w2, w3].forEach(input => input.addEventListener('input', updateMCDM));
+        updateMCDM(); // 初始化計算一次
     }
 });
