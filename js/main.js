@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
 
-    /* --------------------------------------------------------------------------
-       1. 主題切換 (Light / Dark Theme)
-       -------------------------------------------------------------------------- */
+    /* 1. 主題切換 (Light / Dark Theme) ---------------------------------------- */
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
@@ -18,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --------------------------------------------------------------------------
-       2. 雙語切換 (Bilingual Toggle)
-       -------------------------------------------------------------------------- */
+    /* 2. 雙語切換 (Bilingual Toggle) ------------------------------------------- */
     const langBtn = document.getElementById('lang-toggle');
     if (langBtn) {
         langBtn.addEventListener('click', () => {
@@ -48,9 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --------------------------------------------------------------------------
-       3. 手機版選單控制
-       -------------------------------------------------------------------------- */
+    /* 3. 手機版選單控制 -------------------------------------------------------- */
     const menuBtn = document.getElementById('menu-toggle');
     const siteNav = document.getElementById('site-nav');
 
@@ -68,9 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --------------------------------------------------------------------------
-       4. 論文關鍵字搜尋與分類篩選器
-       -------------------------------------------------------------------------- */
+    /* 4. 論文關鍵字搜尋與分類篩選器 ---------------------------------------------- */
     const filterBtns = document.querySelectorAll('.filter');
     const pubSearch = document.getElementById('pub-search');
     const pubItems = document.querySelectorAll('.pub');
@@ -108,18 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
         pubSearch.addEventListener('input', filterPubs);
     }
 
-    /* --------------------------------------------------------------------------
-       5. MCDM 動態權重與即時排序動畫
-       -------------------------------------------------------------------------- */
+    /* 5. 動態MCDM演示即時計算與動畫 --------------------------------------------- */
     const w1 = document.getElementById('w1');
     const w2 = document.getElementById('w2');
     const w3 = document.getElementById('w3');
 
     if (w1 && w2 && w3) {
         const alternatives = [
-            { id: 0, rowEl: document.getElementById('rk-row-0'), meterEl: document.getElementById('m1'), scoreEl: document.getElementById('s1'), baseScores: [0.90, 0.75, 0.85] },
-            { id: 1, rowEl: document.getElementById('rk-row-1'), meterEl: document.getElementById('m2'), scoreEl: document.getElementById('s2'), baseScores: [0.65, 0.95, 0.60] },
-            { id: 2, rowEl: document.getElementById('rk-row-2'), meterEl: document.getElementById('m3'), scoreEl: document.getElementById('s3'), baseScores: [0.80, 0.60, 0.90] }
+            { id: 0, rowEl: document.getElementById('rk-row-0'), meterEl: document.getElementById('m1'), scoreEl: document.getElementById('s1'), baseScores: [0.90, 0.60, 0.60] },
+            { id: 1, rowEl: document.getElementById('rk-row-1'), meterEl: document.getElementById('m2'), scoreEl: document.getElementById('s2'), baseScores: [0.60, 0.90, 0.60] },
+            { id: 2, rowEl: document.getElementById('rk-row-2'), meterEl: document.getElementById('m3'), scoreEl: document.getElementById('s3'), baseScores: [0.60, 0.60, 0.90] }
         ];
 
         function updateMCDM() {
@@ -133,16 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const sumWeights = (val1 + val2 + val3) || 1;
 
-            // 計算權重加權綜合得分
             alternatives.forEach(alt => {
                 const score = (alt.baseScores[0] * val1 + alt.baseScores[1] * val2 + alt.baseScores[2] * val3) / sumWeights;
                 alt.currentScore = score;
             });
 
-            // 依得分降序排序
             const sorted = [...alternatives].sort((a, b) => b.currentScore - a.currentScore);
 
-            // 即時更新排名與動畫位移
             sorted.forEach((item, index) => {
                 const pct = Math.min(100, Math.max(0, Math.round(item.currentScore * 100)));
                 if (item.meterEl) item.meterEl.style.width = `${pct}%`;
@@ -167,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.addEventListener('change', updateMCDM);
         });
 
-        // 頁面載入後立即計算一次
         updateMCDM();
     }
 });
