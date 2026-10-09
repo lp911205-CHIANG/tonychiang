@@ -598,3 +598,72 @@ input[type="range"]::-moz-range-thumb {
   .pub, .honor, .tl li, .topic { break-inside: avoid; }
   .tier[data-tier="1"] { border-color: #000; background: none; color: #000; }
 }
+/* Hero 右側照片樣式 */
+.hero-portrait {
+    width: 280px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    justify-self: center;
+}
+.hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MCDM 展示區塊獨立置中 */
+.demo-block {
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* 研究興趣 3 欄圖片卡片網格 */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.research-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.research-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.research-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.research-card h3 {
+    font: 700 1.15rem var(--serif);
+    margin-bottom: 6px;
+    color: var(--ink);
+}
+
+.research-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .hero-portrait {
+        width: 220px;
+        height: 275px;
+        margin-top: 20px;
+    }
+}
