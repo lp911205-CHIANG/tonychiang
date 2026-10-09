@@ -6,11 +6,12 @@
     <meta name="description" content="江育霖 (Tony Y. L. Chiang) - 個人學術網站 | 智慧健康照護與決策科學研究">
     <title data-zh="江育霖 (Tony Y. L. Chiang) - 個人學術網站" data-en="Tony Y. L. Chiang - Academic Website">江育霖 (Tony Y. L. Chiang) - 個人學術網站</title>
     
+    <!-- 學術統一字型 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -40,122 +41,129 @@
         </div>
     </header>
 
-    <!-- Hero Section (照片放回右側 + 下方 MCDM 展示) -->
+    <!-- Hero 主視覺區塊 -->
     <section id="home" class="hero">
         <div class="wrap">
             <div class="hero-grid">
                 <div class="hero-intro">
                     <h1>江育霖</h1>
                     <p class="en-name">Tony Y. L. Chiang</p>
-                    <p class="affil" data-zh="專注於智慧健康照護與決策科學" data-en="Focusing on Smart Healthcare & Decision Science">專注於智慧健康照護與決策科學</p>
-                    <p class="statement" data-zh="致力設計混合的健康決策模型，將模糊理論與 MCDM 應用於醫療機構評估與智慧健康照護系統。" data-en="Dedicated to designing hybrid healthcare decision models, applying fuzzy logic and MCDM to healthcare evaluation and smart health systems.">致力設計混合的健康決策模型，將模糊理論與 MCDM 應用於醫療機構評估與智慧健康照護系統。</p>
+                    <p class="affil" data-zh="專注於<span class='highlight-blue'>智慧健康照護</span>與<span class='highlight-blue'>決策科學</span>" data-en="Focusing on <span class='highlight-blue'>Smart Healthcare</span> & <span class='highlight-blue'>Decision Science</span>">專注於<span class="highlight-blue">智慧健康照護</span>與<span class="highlight-blue">決策科學</span></p>
+                    <p class="statement" data-zh="致力設計<span class='highlight-blue'>混合式健康決策模型</span>，將模糊理論與 MCDM 應用於醫療機構評估與智慧健康照護系統。" data-en="Dedicated to designing <span class='highlight-blue'>hybrid healthcare decision models</span>, applying fuzzy logic and MCDM to healthcare evaluation and smart health systems.">致力設計<span class="highlight-blue">混合式健康決策模型</span>，將模糊理論與 MCDM 應用於醫療機構評估與智慧健康照護系統。</p>
                     <div class="hero-actions">
                         <a href="#about" class="btn btn-primary" data-zh="了解更多" data-en="Learn More">了解更多</a>
                         <a href="#contact" class="btn" data-zh="聯絡我" data-en="Contact Me">聯絡我</a>
                     </div>
                 </div>
 
-                <!-- 個人照片放回 Hero 右側 -->
+                <!-- 個人照片 -->
                 <div class="hero-portrait">
                     <img src="images/profile.jpg" alt="江育霖 Tony Y. L. Chiang">
                 </div>
             </div>
-
-            <!-- MCDM 互動展示獨立區塊 -->
-            <div class="demo-block">
-                <aside class="demo">
-                    <h2 data-zh="MCDM 動態權重演示" data-en="Interactive MCDM Demo">MCDM 動態權重演示</h2>
-                    <p class="demo-note" data-zh="拖動下方滑桿，體驗權重調整對健康照護評估決策的即時排序影響：" data-en="Adjust the sliders below to see real-time ranking changes in decision criteria:">拖動下方滑桿，體驗權重調整對健康照護評估決策的即時排序影響：</p>
-                    <div class="weights">
-                        <div class="weight">
-                            <span data-zh="醫療服務品質" data-en="Service Quality">醫療服務品質</span>
-                            <span class="w-val" id="w1-val">0.40</span>
-                            <input type="range" id="w1" min="0" max="1" step="0.05" value="0.40">
-                        </div>
-                        <div class="weight">
-                            <span data-zh="智慧系統易用性" data-en="System Usability">智慧系統易用性</span>
-                            <span class="w-val" id="w2-val">0.35</span>
-                            <input type="range" id="w2" min="0" max="1" step="0.05" value="0.35">
-                        </div>
-                        <div class="weight">
-                            <span data-zh="營運與財務效益" data-en="Operational Efficiency">營運與財務效益</span>
-                            <span class="w-val" id="w3-val">0.25</span>
-                            <input type="range" id="w3" min="0" max="1" step="0.05" value="0.25">
-                        </div>
-                    </div>
-                    <div class="rank">
-                        <div class="rank-row top" id="rk-row-0">
-                            <span class="rk">1</span>
-                            <span class="rn" data-zh="智慧健檢 2.0" data-en="Smart Check-up">智慧健檢 2.0</span>
-                            <div class="meter"><i id="m1" style="width: 85%;"></i></div>
-                            <span class="rs" id="s1">0.85</span>
-                        </div>
-                        <div class="rank-row" id="rk-row-1">
-                            <span class="rk">2</span>
-                            <span class="rn" data-zh="HIS 系統優化" data-en="HIS Usability">HIS 系統優化</span>
-                            <div class="meter"><i id="m2" style="width: 72%;"></i></div>
-                            <span class="rs" id="s2">0.72</span>
-                        </div>
-                        <div class="rank-row" id="rk-row-2">
-                            <span class="rk">3</span>
-                            <span class="rn" data-zh="高齡友善照護" data-en="Age-Friendly">高齡友善照護</span>
-                            <div class="meter"><i id="m3" style="width: 68%;"></i></div>
-                            <span class="rs" id="s3">0.68</span>
-                        </div>
-                    </div>
-                </aside>
-            </div>
         </div>
     </section>
 
-    <!-- 個人簡介區塊 -->
+    <!-- 個人簡介區塊 (含放大字體與核心研究方法處的動態MCDM演示) -->
     <section id="about" class="section">
         <div class="wrap">
             <div class="section-grid">
                 <h2 data-zh="個人簡介" data-en="About Me">個人簡介</h2>
                 <div class="about-body">
                     <div class="about-text">
-                        <p data-zh="專注於智慧健康照護領域，致力設計混合的健康決策模型。在研究中，我使用模糊理論與多準則決策分析（MCDM），以提升模型的實務應用性與決策品質。具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。" 
-                           data-en="Focusing on smart healthcare, I am dedicated to designing hybrid healthcare decision models. In my research, I utilize fuzzy logic and multi-criteria decision analysis (MCDM) to enhance practical applicability and decision quality. Equipped with systems thinking and modular design capabilities, I emphasize practical translation of techniques, focusing on real-world benefits and operational feasibility in health systems.">
-                           專注於智慧健康照護領域，致力設計混合的健康決策模型。在研究中，我使用模糊理論與多準則決策分析（MCDM），以提升模型的實務應用性與決策品質。具備系統思維與模組化設計能力，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。
+                        <p data-zh="專注於<span class='highlight-blue'>智慧健康照護</span>領域，致力設計<span class='highlight-blue'>混合式健康決策模型</span>。在研究中，我使用<span class='highlight-blue'>模糊理論</span>與<span class='highlight-blue'>多準則決策分析 (MCDM)</span>，以提升模型的實務應用性與決策品質。具備<span class='highlight-blue'>系統思維</span>與<span class='highlight-blue'>模組化設計能力</span>，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。" 
+                           data-en="Focusing on <span class='highlight-blue'>smart healthcare</span>, I am dedicated to designing <span class='highlight-blue'>hybrid healthcare decision models</span>. In my research, I utilize <span class='highlight-blue'>fuzzy logic</span> and <span class='highlight-blue'>MCDM</span> to enhance practical applicability and decision quality. Equipped with <span class='highlight-blue'>systems thinking</span> and <span class='highlight-blue'>modular design capabilities</span>, I emphasize practical translation of techniques, focusing on real-world benefits and operational feasibility in health systems.">
+                           專注於<span class="highlight-blue">智慧健康照護</span>領域，致力設計<span class="highlight-blue">混合式健康決策模型</span>。在研究中，我使用<span class="highlight-blue">模糊理論</span>與<span class="highlight-blue">多準則決策分析 (MCDM)</span>，以提升模型的實務應用性與決策品質。具備<span class="highlight-blue">系統思維</span>與<span class="highlight-blue">模組化設計能力</span>，強調技術的落地轉化，關注其在健康領域中的實際效益與操作性。
                         </p>
                         
                         <dl class="methods">
                             <div>
                                 <dt data-zh="核心研究方法" data-en="Core Methods">核心研究方法</dt>
-                                <dd data-zh="文獻計量分析、多準則決策分析 (MCDM)、統計分析" data-en="Bibliometric Analysis, Multi-Criteria Decision Analysis (MCDM), Statistical Analysis">文獻計量分析、多準則決策分析 (MCDM)、統計分析</dd>
+                                <dd data-zh="<span class='highlight-blue'>文獻計量分析</span>、<span class='highlight-blue'>多準則決策分析 (MCDM)</span>、<span class='highlight-blue'>統計分析</span>" data-en="<span class='highlight-blue'>Bibliometric Analysis</span>, <span class='highlight-blue'>MCDM</span>, <span class='highlight-blue'>Statistical Analysis</span>"><span class="highlight-blue">文獻計量分析</span>、<span class="highlight-blue">多準則決策分析 (MCDM)</span>、<span class="highlight-blue">統計分析</span></dd>
                             </div>
                             <div>
                                 <dt data-zh="分析軟體與工具" data-en="Tools & Software">分析軟體與工具</dt>
                                 <dd>SAS, SPSS, R, QGIS, LINGO, VOSviewer, Python, Excel</dd>
                             </div>
                         </dl>
+
+                        <!-- 動態MCDM演示置於核心研究方法下方 -->
+                        <div class="demo-embedded">
+                            <aside class="demo">
+                                <h3 class="demo-title" data-zh="動態MCDM演示" data-en="Dynamic MCDM Demo">動態MCDM演示</h3>
+                                <p class="demo-note" data-zh="拖動下方滑桿，體驗權重調整對健康照護評估決策的即時排序影響：" data-en="Adjust the sliders below to see real-time ranking changes in decision criteria:">拖動下方滑桿，體驗權重調整對健康照護評估決策的即時排序影響：</p>
+                                <div class="weights">
+                                    <div class="weight">
+                                        <span data-zh="醫療服務品質" data-en="Service Quality">醫療服務品質</span>
+                                        <span class="w-val" id="w1-val">0.40</span>
+                                        <input type="range" id="w1" min="0" max="1" step="0.05" value="0.40">
+                                    </div>
+                                    <div class="weight">
+                                        <span data-zh="智慧系統易用性" data-en="System Usability">智慧系統易用性</span>
+                                        <span class="w-val" id="w2-val">0.35</span>
+                                        <input type="range" id="w2" min="0" max="1" step="0.05" value="0.35">
+                                    </div>
+                                    <div class="weight">
+                                        <span data-zh="營運與財務效益" data-en="Operational Efficiency">營運與財務效益</span>
+                                        <span class="w-val" id="w3-val">0.25</span>
+                                        <input type="range" id="w3" min="0" max="1" step="0.05" value="0.25">
+                                    </div>
+                                </div>
+                                <div class="rank">
+                                    <div class="rank-row top" id="rk-row-0">
+                                        <span class="rk">1</span>
+                                        <span class="rn" data-zh="智慧健檢 2.0" data-en="Smart Check-up">智慧健檢 2.0</span>
+                                        <div class="meter"><i id="m1" style="width: 85%;"></i></div>
+                                        <span class="rs" id="s1">0.85</span>
+                                    </div>
+                                    <div class="rank-row" id="rk-row-1">
+                                        <span class="rk">2</span>
+                                        <span class="rn" data-zh="HIS 系統優化" data-en="HIS Usability">HIS 系統優化</span>
+                                        <div class="meter"><i id="m2" style="width: 72%;"></i></div>
+                                        <span class="rs" id="s2">0.72</span>
+                                    </div>
+                                    <div class="rank-row" id="rk-row-2">
+                                        <span class="rk">3</span>
+                                        <span class="rn" data-zh="高齡友善照護" data-en="Age-Friendly">高齡友善照護</span>
+                                        <div class="meter"><i id="m3" style="width: 68%;"></i></div>
+                                        <span class="rs" id="s3">0.68</span>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 研究興趣區塊 (帶圖片的 3 欄卡片) -->
+    <!-- 研究興趣區塊 (橫向三欄排版，圖片等大等高) -->
     <section id="research" class="section">
         <div class="wrap">
             <div class="section-grid">
                 <h2 data-zh="研究興趣" data-en="Research">研究興趣</h2>
                 <div class="research-grid">
                     <div class="research-card">
-                        <img src="images/smart medical.jpg" alt="智慧健康照護">
+                        <div class="img-wrapper">
+                            <img src="images/smart medical.jpg" alt="智慧健康照護">
+                        </div>
                         <h3 data-zh="智慧健康照護" data-en="Smart Healthcare">智慧健康照護</h3>
-                        <p data-zh="結合智慧化與決策科學的醫療應用" data-en="Healthcare applications combining smart technology and decision science">結合智慧化與決策科學的醫療應用</p>
+                        <p data-zh="結合<span class='highlight-blue'>智慧化</span>與<span class='highlight-blue'>決策科學</span>的醫療應用" data-en="Healthcare applications combining <span class='highlight-blue'>smart tech</span> and <span class='highlight-blue'>decision science</span>">結合<span class="highlight-blue">智慧化</span>與<span class="highlight-blue">決策科學</span>的醫療應用</p>
                     </div>
                     <div class="research-card">
-                        <img src="images/mcdm.jpg.png" alt="決策模型於醫療機構評估應用">
+                        <div class="img-wrapper">
+                            <img src="images/mcdm.jpg.png" alt="決策模型於醫療機構評估應用">
+                        </div>
                         <h3 data-zh="決策模型於醫療機構評估" data-en="MCDM in Healthcare Evaluation">決策模型於醫療機構評估</h3>
-                        <p data-zh="多準則決策方法的醫療實務應用" data-en="Practical application of multi-criteria decision frameworks in healthcare">多準則決策方法的醫療實務應用</p>
+                        <p data-zh="<span class='highlight-blue'>多準則決策方法</span>的醫療實務應用" data-en="Practical application of <span class='highlight-blue'>multi-criteria decision frameworks</span> in healthcare"><span class="highlight-blue">多準則決策方法</span>的醫療實務應用</p>
                     </div>
                     <div class="research-card">
-                        <img src="images/ai.jfif" alt="虛擬人與健康行銷">
+                        <div class="img-wrapper">
+                            <img src="images/ai.jfif" alt="虛擬人與健康行銷">
+                        </div>
                         <h3 data-zh="虛擬人與健康行銷" data-en="Virtual Humans & Health Marketing">虛擬人與健康行銷</h3>
-                        <p data-zh="虛擬代言人在健康產品的可信度與行銷效果研究" data-en="Research on credibility and marketing effectiveness of virtual endorsers for health products">虛擬代言人在健康產品的可信度與行銷效果研究</p>
+                        <p data-zh="<span class='highlight-blue'>虛擬代言人</span>在健康產品的可信度與行銷效果研究" data-en="Research on credibility and marketing effectiveness of <span class='highlight-blue'>virtual endorsers</span>"> <span class="highlight-blue">虛擬代言人</span>在健康產品的可信度與行銷效果研究</p>
                     </div>
                 </div>
             </div>
@@ -537,6 +545,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=4"></script>
+    <script src="js/main.js?v=6"></script>
 </body>
 </html>
